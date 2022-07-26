@@ -1,3 +1,18 @@
+# Todo App
+This Todo App allows users create, read, update and delete (CRUD) events they wish to track.
+
+The technologies used in the app are the same that were used in the hackernews-react-apollo in order to allow
+me to practise more using GraphQL with the aid of Apollo Client.
+
+## Technologies
+* Frontend:
+    * React
+    * Apollo Client - GraphicQL Client
+* Backend
+    * Apollo Server
+    * Prisma
+    * **Database to be confirmed**
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
