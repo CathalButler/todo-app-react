@@ -18,3 +18,12 @@ databases tables and the relations between them.
 Install server dependencies run:<br>
 * `npm install` 
 
+Create the first Prisma migration
+* `prisma migrate dev --name init`<br>
+
+Now the Prisma schema is now in sync with the database schema and a migration history has been initialized
+```
+migrations/
+└─ 20220727073050_init/
+  └─ migration.sql
+```
