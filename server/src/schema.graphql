@@ -18,7 +18,12 @@ type Task {
 
 # Mutations which allow for Creating, updating and deleting data:
 type Mutation {
-    task(title: String!, isComplete: Boolean, note: String): User!
+    # Task Mutations
+    createTask(title: String!, isComplete: Boolean, note: String): Task!
+    updateTask(title: String!, isComplete: Boolean, note: String): Task!
+    deleteTask(id: ID!): Task!
+
+    # Account Mutation
     signup(email: String!, password: String, name: String!): AuthPayload
     login(email: String!, password: String!): AuthPayload
 }
