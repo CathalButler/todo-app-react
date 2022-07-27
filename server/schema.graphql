@@ -1,0 +1,53 @@
+# A query that retrieves all tasks form the backend. This query also allows for filter, sorting and pagination arguments
+type Query {
+    info: String!
+    task(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): Task!
+}
+
+# Task type, these fields will make up a task entry.
+# Required: id, title, isComplete, createdAt and createdBy
+type Task {
+    id:ID!
+    title: String!
+    isComplete: Boolean!
+    note: String
+    createdAt: DateTime!
+    createdBy: User!
+
+}
+
+# Mutations which allow for Creating, updating and deleting data:
+type Mutation {
+    task(title: String!, isComplete: Boolean, note: String): User!
+    signup(email: String!, password: String, name: String!): AuthPayload
+    login(email: String!, password: String!): AuthPayload
+}
+
+# Authentication token and user details
+type AuthPayload {
+    token: String
+    user: User
+}
+
+# Type user, which will be a user account on the app
+# Required: id, name, tasks[]
+type User {
+    id: ID!
+    name: String!
+    email: String
+    tasks: [Task!]!
+}
+
+input LinkOrderByInput {
+    description: Sort
+    url: Sort
+    createdAt: Sort
+}
+
+enum Sort {
+    asc
+    desc
+}
+
+scalar DateTime
+
