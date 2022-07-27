@@ -1,7 +1,7 @@
 # A query that retrieves all tasks form the backend. This query also allows for filter, sorting and pagination arguments
 type Query {
-    info: String!
-    task(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): Task!
+    getTasks(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): [Task!]!
+    getUsers(filter: String, skip: Int, take: Int): [User!]!
 }
 
 # Task type, these fields will make up a task entry.
@@ -16,6 +16,15 @@ type Task {
 
 }
 
+# Type user, which will be a user account on the app
+# Required: id, name, tasks[]
+type User {
+    id: ID!
+    name: String
+    email: String
+    tasks: [Task]
+}
+
 # Mutations which allow for Creating, updating and deleting data:
 type Mutation {
     # Task Mutations
@@ -23,7 +32,7 @@ type Mutation {
     updateTask(title: String!, isComplete: Boolean, note: String): Task!
     deleteTask(id: ID!): Task!
 
-    # Account Mutation
+    # Account Mutations
     signup(email: String!, password: String, name: String!): AuthPayload
     login(email: String!, password: String!): AuthPayload
 }
@@ -32,15 +41,6 @@ type Mutation {
 type AuthPayload {
     token: String
     user: User
-}
-
-# Type user, which will be a user account on the app
-# Required: id, name, tasks[]
-type User {
-    id: ID!
-    name: String!
-    email: String
-    tasks: [Task!]!
 }
 
 input LinkOrderByInput {
