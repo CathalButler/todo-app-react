@@ -7,7 +7,7 @@ Backend Server
 from the frontend
   * `reslovers` contains the resolver function for the operation defined in this TODO application schema. Example Create,
 update and delete tasks.
-  * `index.js` is the entry point for the GraphQL server.
+  * `index.ts` is the entry point for the GraphQL server.
 * `prisma`: This directory holds all the files related to Prisma setup. Prisma Client is used to access the database in
 the GraphQL resolvers.
   * 'schema.prisma' defines the data model for this project.  It uses the Prisma schema Language to define the shape of the 

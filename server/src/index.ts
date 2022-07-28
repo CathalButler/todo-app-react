@@ -1,4 +1,6 @@
-const {ApolloServer} = require('apollo-server');
+import {ApolloServer} from "apollo-server";
+
+
 const {PrismaClient} = require('@prisma/client');
 const fs = require('fs');
 const path = require('path');
@@ -36,23 +38,6 @@ const server = new ApolloServer({
                     : null
         };
     },
-    subscriptions: {
-        onConnect: (connectionParams) => {
-            if (connectionParams.authToken) {
-                return {
-                    prisma,
-                    userId: getUserId(
-                        null,
-                        connectionParams.authToken
-                    )
-                };
-            } else {
-                return {
-                    prisma
-                };
-            }
-        }
-    }
 });
 
 server
