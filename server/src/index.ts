@@ -1,7 +1,6 @@
 import {ApolloServer} from "apollo-server";
+import { PrismaClient } from '@prisma/client';
 
-
-const {PrismaClient} = require('@prisma/client');
 const fs = require('fs');
 const path = require('path');
 const Query = require('./resolvers/Query');

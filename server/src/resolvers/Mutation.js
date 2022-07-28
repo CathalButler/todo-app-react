@@ -8,12 +8,13 @@ async function createTask(parent, args, context) {
     let createdBy = undefined
     // Constants
     const {userId} = context;
+
     const newTask = await context.prisma.task.create({
         data: {
             title: args.title,
             isComplete: args.isComplete,
             note: args.note,
-            createdBy
+            // createdBy
         }
     });
 
@@ -38,7 +39,7 @@ async function updateTask(parent, args, context) {
             title: args.title,
             isComplete: args.isComplete,
             note: args.note,
-            createdBy
+            // createdBy
         }
     });
 
