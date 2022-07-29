@@ -22,10 +22,12 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
+    // typeDefs are read from the schema rather than defining them as a content in this class.
     typeDefs: fs.readFileSync(
         path.join(__dirname, 'schema.graphql'),
         'utf8'
     ),
+    // Resolvers are broken into their own
     resolvers,
     context: ({req}) => {
         return {
