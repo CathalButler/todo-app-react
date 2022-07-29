@@ -1,59 +1,22 @@
 import '../styles/App.css';
-import {NavLink, Route, Routes} from "react-router-dom";
-import Login from './pages/Login'
-import Home from "./pages/Home";
 import React from "react";
-import Register from "./pages/Register";
+import {AUTH_TOKEN} from "../constants";
+import Login from "./Login/Login";
 
 function App() {
 
+    // Grab auth key from local storage:
+    const authToken = localStorage.getItem(AUTH_TOKEN);
+
+    // If the key does not exist, return authentication
+    if (!authToken) {
+        return <Login/>
+    }
+
     return (
-        <div className={"App"}>
-            <div className={"appAside"}/>
-            <div className="appForm">
-                <div className="pageSwitcher">
-                    <NavLink
-                        className={nav => (nav.isActive ? "pageSwitcherItem-active" : "pageSwitcherItem")}
-                        to="/login"
-                    >
-                        Sign In
-                    </NavLink>
-                    <NavLink
-                        to="/register"
-                        className={nav => (nav.isActive ? "pageSwitcherItem-active" : "pageSwitcherItem")}
-                    >
-                        Register
-                    </NavLink>
-                </div>
-
-
-                <div className="formTitle">
-                    <NavLink
-                        to="/login"
-                        className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
-                    >
-                        Sign In
-                    </NavLink>{" "}
-                    or{" "}
-                    <NavLink
-                        className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
-                        to="/register"
-
-                    >
-                        Register
-                    </NavLink>
-                </div>
-
-                {/*<Header/>*/}
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route
-                        path="/register"
-                        element={<Register/>}
-                    />
-                    <Route path="/login" element={<Login/>}/>
-                </Routes>
-            </div>
+        <div className={"wrapper"}>
+            <h1>Welcome to a React To-do app! </h1>
+            {/*<Header/>*/}
         </div>
     );
 }

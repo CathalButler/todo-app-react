@@ -3,6 +3,10 @@
   pointer-events: none;
 }
 
+.wrapper {
+  padding: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -53,12 +57,19 @@
   color: white;
 }
 
-.appAside {
+.auth-body {
+  height: 100vh;
+  display: flex;
+  color: white;
+}
+
+
+.authAside {
   width: 50%;
   background-color: #76ffb5;
 }
 
-.appForm {
+.authForm {
   width: 50%;
   background-color: #292929;
   padding: 25px 40px;
@@ -167,7 +178,7 @@
   color: #66707d;
   text-decoration: none;
   display: inline-block;
-  border-bottom: 1.5px solid #3a37ee;;
+  border-bottom: 2px solid #3a37ee;;
   padding-bottom: 5px;
 }
 

@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import {
-    ApolloProvider,
-    ApolloClient,
-    createHttpLink,
-    InMemoryCache
-} from '@apollo/client';
-import {BrowserRouter} from "react-router-dom";
+import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apollo/client';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
+import Home from "./components/Home/Home";
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
@@ -25,7 +23,13 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <BrowserRouter>
         <ApolloProvider client={client}>
-            <App/>
+            <Routes>
+                <Route path={"/"} element={ <App/>}/>
+                <Route path="/register" element={<Register/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/home" element={<Home/>}/>
+            </Routes>
+
         </ApolloProvider>
     </BrowserRouter>
 );
