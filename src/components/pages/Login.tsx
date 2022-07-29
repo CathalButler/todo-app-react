@@ -1,11 +1,37 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {gql, useMutation} from "@apollo/client";
+import { AUTH_TOKEN } from '../../constants';
+
+const LOGIN_MUTATION = gql`
+    mutation LoginMutation(
+        $email: String!
+        $password: String!
+    ) {
+        login(email: $email, password: $password) {
+            token
+        }
+    }
+`;
 
 const Login = () => {
+    const navigate = useNavigate();
 
     const [formState, setFormState] = useState({
         email: '',
         password: '',
+    });
+
+    // Login Mutation hook with AUTH_TOKEN and routing set
+    const [login] = useMutation(LOGIN_MUTATION, {
+        variables: {
+            email: formState.email,
+            password: formState.password
+        },
+        onCompleted: ({ login }) => {
+            localStorage.setItem(AUTH_TOKEN, login.token);
+            navigate('/');
+        }
     });
 
     return (
@@ -54,8 +80,7 @@ const Login = () => {
             </div>
 
             <div className="formField">
-                <button className="formFieldButton">Sign In</button>
-                {" "}
+                <button className="formFieldButton" onClick={() => login()}>Sign In</button>
                 <Link to="/register" className="formFieldLink">
                     Register
                 </Link>

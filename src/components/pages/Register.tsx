@@ -1,12 +1,45 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {gql, useMutation} from "@apollo/client";
+import {AUTH_TOKEN} from "../../constants";
+
+const REGISTER_MUTATION = gql`
+    mutation Signup(
+        $email: String!
+        $password: String!
+        $name: String!
+    ) {
+        signup(
+            email: $email
+            password: $password
+            name: $name
+        ) {
+            token
+        }
+    }
+`;
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const [formState, setFormState] = useState({
         name: '',
         email: '',
         password: '',
+    });
+
+    // Register Mutation hook with AUTH_TOKEN and routing set
+    const [register] = useMutation(REGISTER_MUTATION, {
+        variables: {
+            name: formState.name,
+            email: formState.email,
+            password: formState.password
+        },
+        onCompleted: ({signup: register}) => {
+            localStorage.setItem(AUTH_TOKEN, register.token);
+            navigate('/');
+        }
     });
 
     return (
@@ -69,8 +102,7 @@ const Register = () => {
                 />
             </div>
             <div className="formField">
-                <button className="formFieldButton">Register</button>
-                {" "}
+                <button className="formFieldButton" onClick={() => register()}>Register</button>
                 <Link to="/login" className="formFieldLink">
                     I'm already member
                 </Link>
