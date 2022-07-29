@@ -4,13 +4,12 @@ import {Link} from 'react-router-dom';
 const Login = () => {
 
     const [formState, setFormState] = useState({
-        login: true,
         email: '',
         password: '',
     });
 
     return (
-        <div className={"appForm"}>
+        <div>
             <div className="formCenter">
                 <div className="formFields">
                     <label className="formFieldLabel" htmlFor="email">
@@ -57,8 +56,8 @@ const Login = () => {
             <div className="formField">
                 <button className="formFieldButton">Sign In</button>
                 {" "}
-                <Link to="/login" className="formFieldLink">
-                    Create an account
+                <Link to="/register" className="formFieldLink">
+                    Register
                 </Link>
             </div>
         </div>

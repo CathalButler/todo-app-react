@@ -3,6 +3,7 @@ import {NavLink, Route, Routes} from "react-router-dom";
 import Login from './pages/Login'
 import Home from "./pages/Home";
 import React from "react";
+import Register from "./pages/Register";
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
                         to="/register"
                         className={nav => (nav.isActive ? "pageSwitcherItem-active" : "pageSwitcherItem")}
                     >
-                        Sign Up
+                        Register
                     </NavLink>
                 </div>
 
@@ -39,17 +40,17 @@ function App() {
                         to="/register"
 
                     >
-                        Sign Up
+                        Register
                     </NavLink>
                 </div>
 
                 {/*<Header/>*/}
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    {/*<Route*/}
-                    {/*    path="/Logout"*/}
-                    {/*    element={<Login/>}*/}
-                    {/*/>*/}
+                    <Route
+                        path="/register"
+                        element={<Register/>}
+                    />
                     <Route path="/login" element={<Login/>}/>
                 </Routes>
             </div>
