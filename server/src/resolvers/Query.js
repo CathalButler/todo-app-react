@@ -20,20 +20,11 @@ async function getTasks(parent, args, context, info) {
     console.log(tasks);
     console.log(count);
 
-
     return tasks;
-
-    // Todo - Workout the issue here when returning more then one value.
-    // return {
-    //     tasks,
-    //     count
-    // };
 }
 
 async function getUsers(parent, args, context, info) {
-    const users = await context.prisma.user.findMany({});
-
-    return users
+    return await context.prisma.user.findMany({})
 }
 
 

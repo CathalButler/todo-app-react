@@ -82,6 +82,8 @@ async function signup(parent, args, context, info) {
 // This function handles the login of a user account.
 async function login(parent, args, context, info) {
     // User account is checked by email:
+    console.log(args);
+
     const user = await context.prisma.user.findUnique({
         where: {email: args.email}
     });

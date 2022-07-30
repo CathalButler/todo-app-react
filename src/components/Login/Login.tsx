@@ -3,15 +3,13 @@ import {Link, NavLink, useNavigate} from 'react-router-dom';
 import {gql, useMutation} from "@apollo/client";
 import {AUTH_TOKEN} from '../../constants';
 import {SubmitHandler, useForm} from "react-hook-form";
+import {ErrorMessage} from "../../errorMessage";
 
 interface LoginDetails {
     email: string,
     password: string
 }
 
-interface ErrorMessage {
-    errMessage: string
-}
 
 const LOGIN_MUTATION = gql`
     mutation LoginMutation(
@@ -51,7 +49,17 @@ export default function Login() {
     }).catch(error => {
         // Display a UI error if the password is invalided:
         if (error.message === "Invalid password") {
-            setError(error.message)
+            const err: ErrorMessage = {
+                error: true,
+                errMessage: error.message
+            }
+            setError(err)
+        } else if ((error.message === "No such user found")) {
+            const err: ErrorMessage = {
+                error: true,
+                errMessage: "No such user found, please check your login details"
+            }
+            setError(err)
         } else {
             // Log the error
             console.log(error.message);
@@ -63,9 +71,7 @@ export default function Login() {
         <div>
             <div className={"auth-body"}>
                 <div className={"authAside"}/>
-                <form className="authForm" onSubmit={handleSubmit(onSubmit)
-
-                }>
+                <form className="authForm" onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <div className="formTitle">
                             <NavLink
@@ -121,7 +127,7 @@ export default function Login() {
                             {errors.password && <p>Please check the Password</p>}
                         </div>
 
-                        {error && <div className={"error-message"}>Please check your password</div>}
+                        {error?.error && <div className={"error-message"}>{error.errMessage}</div>}
 
                         <div className="formField">
                             <button className={"formFieldButton"} type={"submit"}>Sign In</button>
