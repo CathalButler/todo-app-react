@@ -88,3 +88,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### References:
 * https://www.apollographql.com/docs/apollo-server/
 * https://www.prisma.io/docs/concepts/components/prisma-client/crud
+* https://www.react-hook-form.com/
+* https://reactrouter.com/
