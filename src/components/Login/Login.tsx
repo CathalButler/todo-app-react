@@ -70,10 +70,10 @@ export default function Login() {
     return (
         <div>
             <div className={"auth-body"}>
-                <div className={"authAside"}/>
+                <div className={"auth-a-side"}/>
                 <form className="authForm" onSubmit={handleSubmit(onSubmit)}>
-                    <div>
-                        <div className="formTitle">
+                    <div className="formTitle">
+                        <div className={"padding-vertical padding-small"}>
                             <NavLink
                                 to="/login"
                                 className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
@@ -87,7 +87,7 @@ export default function Login() {
                                 Register
                             </NavLink>
                         </div>
-                        <div className="formCenter">
+                        <div className="padding-vertical padding-small">
                             <div className="formFields">
                                 <label className="formFieldLabel" htmlFor="email">
                                     E-Mail Address
@@ -109,7 +109,7 @@ export default function Login() {
                         </div>
 
 
-                        <div className="formField">
+                        <div className="padding-vertical padding-small">
                             <label className="formFieldLabel" htmlFor="password">
                                 Password
                             </label>
@@ -129,11 +129,8 @@ export default function Login() {
 
                         {error?.error && <div className={"error-message"}>{error.errMessage}</div>}
 
-                        <div className="formField">
-                            <button className={"formFieldButton"} type={"submit"}>Sign In</button>
-                            <Link to="/register" className="formFieldLink">
-                                Register
-                            </Link>
+                        <div className="formButtons">
+                            <button className={"formFieldButton spaceBetweenButtons"} type={"submit"}>Sign In</button>
                         </div>
                     </div>
                 </form>
