@@ -1,7 +1,9 @@
 import "./Home.css"
+import {Box, Button, Card, CardActions, CardContent, Checkbox, FormControlLabel, Typography} from "@mui/material";
 
 const Home = () => {
-
+    //Constants
+    const label = {inputProps: {'aria-label': 'Complete'}};
 
     return (
 
@@ -26,7 +28,46 @@ const Home = () => {
                     <div className={"page-padding"}>
                         <div className={"container-large"}>
                             <div className={"padding-vertical padding-small"}>
+                                <Card sx={{minWidth: 275}}>
+                                    <CardContent>
+                                        <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
+                                            Date - Time
+                                        </Typography>
+                                        <Typography variant="h5" component="div">
+                                            Learning CSS
+                                        </Typography>
+                                        <Typography variant="body2">
+                                            Take some notes on implementing material elements.
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <FormControlLabel label={"Complete"} control={
+                                            <Checkbox {...label} color="secondary"/>
+                                        }/>
+                                        <Button size="small">Delete</Button>
+                                    </CardActions>
+                                </Card>
 
+                                <div className={"padding-vertical padding-small"}></div>
+
+                                <Card sx={{minWidth: 275}}>
+                                    <CardContent>
+                                        <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
+                                            Date - Time
+                                        </Typography>
+                                        <Typography variant="h5" component="div">
+                                            Do Taxes
+                                        </Typography>
+                                        <Typography variant="body2">
+                                        </Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <FormControlLabel label={"Complete"} control={
+                                            <Checkbox {...label} color="secondary"/>
+                                        }/>
+                                        <Button size="small">Delete</Button>
+                                    </CardActions>
+                                </Card>
                             </div>
 
                         </div>
