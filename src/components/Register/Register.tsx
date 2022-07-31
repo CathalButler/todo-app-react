@@ -65,90 +65,85 @@ export default function Register() {
     })
 
     return (
-        <div>
-            <div className={"auth-body"}>
-                <div className={"authAside"}/>
-                <form className="authForm" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="formTitle">
-                        <NavLink
-                            to="/login"
-                            className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
-                        >
-                            Sign In
-                        </NavLink>
-                        <NavLink
-                            className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
-                            to="/register"
-                        >
-                            Register
-                        </NavLink>
-                    </div>
-                    <div className={"formCenter"}>
-                        <div className="formField">
-                            <label className="formFieldLabel" htmlFor="name">
-                                Full Name
-                            </label>
-                            <input
-                                {...register("name", {
-                                    required: true,
-                                    min: 3
-                                })}
-                                type="text"
-                                id="name"
-                                className="formFieldInput"
-                                placeholder="Enter your full name"
-                                name="name"
-                            />
-                            {errors.name && <p>Please check the name entered</p>}
-                        </div>
-                        <div className="formField">
-                            <label className="formFieldLabel" htmlFor="email">
-                                E-Mail Address
-                            </label>
-                            <input
-                                {...register("email", {
-                                    required: true,
-                                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                                })}
-                                type="email"
-                                id="email"
-                                className="formFieldInput"
-                                placeholder="Enter your email"
-                                name="email"
-                            />
-                            {/*If there is an error in the email field, the email error message will appear*/}
-                            {errors.email && <p>Please check email address</p>}
-                        </div>
-                        <div className="formField">
-                            <label className="formFieldLabel" htmlFor="password">
-                                Password
-                            </label>
-                            <input
-                                {...register("password", {
-                                    required: true,
-                                    // pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
-                                })}
-                                type="password"
-                                id="password"
-                                className="formFieldInput"
-                                placeholder="Enter your password"
-                                name="password"
-                            />
-                            {errors.password && <p>Please check the Password</p>}
-                        </div>
+        <div className={"auth-body"}>
+            <div className={"auth-a-side"}/>
+            <form className="authForm" onSubmit={handleSubmit(onSubmit)}>
+                <div className={"padding-vertical padding-small"}>
+                    <NavLink
+                        to="/login"
+                        className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
+                    >
+                        Sign In
+                    </NavLink>
+                    <NavLink
+                        className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
+                        to="/register"
+                    >
+                        Register
+                    </NavLink>
+                </div>
+                <div className={"padding-vertical padding-small"}>
+                    <label className="formFieldLabel" htmlFor="name">
+                        Full Name
+                    </label>
+                    <input
+                        {...register("name", {
+                            required: true,
+                            min: 3
+                        })}
+                        type="text"
+                        id="name"
+                        className="formFieldInput"
+                        placeholder="Enter your full name"
+                        name="name"
+                    />
+                    {errors.name && <p>Please check the name entered</p>}
+                </div>
 
-                        {error?.errMessage && <div className={"error-message"}>{error.errMessage}</div>}
+                <div className="padding-vertical padding-small">
+                    <label className="formFieldLabel" htmlFor="email">
+                        E-Mail Address
+                    </label>
+                    <input
+                        {...register("email", {
+                            required: true,
+                            pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                        })}
+                        type="email"
+                        id="email"
+                        className="formFieldInput"
+                        placeholder="Enter your email"
+                        name="email"
+                    />
+                    {/*If there is an error in the email field, the email error message will appear*/}
+                    {errors.email && <p>Please check email address</p>}
+                </div>
+
+                <div className="padding-vertical padding-small">
+                    <label className="formFieldLabel" htmlFor="password">
+                        Password
+                    </label>
+                    <input
+                        {...register("password", {
+                            required: true,
+                            // pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
+                        })}
+                        type="password"
+                        id="password"
+                        className="formFieldInput"
+                        placeholder="Enter your password"
+                        name="password"
+                    />
+                    {errors.password && <p>Please check the Password</p>}
+                </div>
+
+                {error?.errMessage && <div className={"error-message"}>{error.errMessage}</div>}
 
 
-                        <div className="formField">
-                            <button className="formFieldButton" type={"submit"}>Register</button>
-                            <Link to="/login" className="formFieldLink">
-                                I'm already member
-                            </Link>
-                        </div>
-                    </div>
-                </form>
-            </div>
+                <div className="formButtons">
+                    <button className="formFieldButton" type={"submit"}>Register</button>
+                </div>
+            </form>
         </div>
     );
 }

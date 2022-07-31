@@ -72,66 +72,62 @@ export default function Login() {
             <div className={"auth-body"}>
                 <div className={"auth-a-side"}/>
                 <form className="authForm" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="formTitle">
-                        <div className={"padding-vertical padding-small"}>
-                            <NavLink
-                                to="/login"
-                                className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
-                            >
-                                Sign In
-                            </NavLink>
-                            <NavLink
-                                className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
-                                to="/register"
-                            >
-                                Register
-                            </NavLink>
-                        </div>
-                        <div className="padding-vertical padding-small">
-                            <div className="formFields">
-                                <label className="formFieldLabel" htmlFor="email">
-                                    E-Mail Address
-                                </label>
-                                <input
-                                    {...register("email", {
-                                        required: true,
-                                        pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                                    })}
-                                    type="email"
-                                    id="email"
-                                    className="formFieldInput"
-                                    placeholder="Enter your email"
-                                    name="email"
-                                />
-                                {/*If there is an error in the email field, the email error message will appear*/}
-                                {errors.email && <p>Please check email address</p>}
-                            </div>
-                        </div>
+                    <div className={"padding-vertical padding-small"}>
+                        <NavLink
+                            to="/login"
+                            className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
+                        >
+                            Sign In
+                        </NavLink>
+                        <NavLink
+                            className={nav => (nav.isActive ? "formTitleLink-active" : "formTitleLink")}
+                            to="/register"
+                        >
+                            Register
+                        </NavLink>
+                    </div>
+                    <div className="padding-vertical padding-small">
+                        <label className="formFieldLabel" htmlFor="email">
+                            E-Mail Address
+                        </label>
+                        <input
+                            {...register("email", {
+                                required: true,
+                                pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                            })}
+                            type="email"
+                            id="email"
+                            className="formFieldInput"
+                            placeholder="Enter your email"
+                            name="email"
+                        />
+                        {/*If there is an error in the email field, the email error message will appear*/}
+                        {errors.email && <p>Please check email address</p>}
+                    </div>
 
 
-                        <div className="padding-vertical padding-small">
-                            <label className="formFieldLabel" htmlFor="password">
-                                Password
-                            </label>
-                            <input
-                                {...register("password", {
-                                    required: true,
-                                    // pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
-                                })}
-                                type="password"
-                                id="password"
-                                className="formFieldInput"
-                                placeholder="Enter your password"
-                                name="password"
-                            />
-                            {errors.password && <p>Please check the Password</p>}
-                        </div>
+                    <div className="padding-vertical padding-small">
+                        <label className="formFieldLabel" htmlFor="password">
+                            Password
+                        </label>
+                        <input
+                            {...register("password", {
+                                required: true,
+                                // pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
+                            })}
+                            type="password"
+                            id="password"
+                            className="formFieldInput"
+                            placeholder="Enter your password"
+                            name="password"
+                        />
+                        {errors.password && <p>Please check the Password</p>}
+                    </div>
 
-                        {error?.error && <div className={"error-message"}>{error.errMessage}</div>}
+                    {error?.error && <div className={"error-message"}>{error.errMessage}</div>}
 
-                        <div className="formButtons">
-                            <button className={"formFieldButton spaceBetweenButtons"} type={"submit"}>Sign In</button>
-                        </div>
+                    <div className="formButtons">
+                        <button className={"formFieldButton"} type={"submit"}>Sign In</button>
                     </div>
                 </form>
             </div>
