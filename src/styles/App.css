@@ -25,6 +25,10 @@
     color: #292929;
 }
 
+.error-message-text {
+    color: red;
+}
+
 .pagePadding {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -239,6 +243,6 @@
 }
 
 .error-message {
-    padding: 10px 100px 20px 100px;
+    padding: 10px 0px 20px 0px;
 }
 

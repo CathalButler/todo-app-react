@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link, NavLink, useNavigate} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import {gql, useMutation} from "@apollo/client";
 import {AUTH_TOKEN} from '../../constants';
 import {SubmitHandler, useForm} from "react-hook-form";
@@ -63,6 +63,11 @@ export default function Login() {
         } else {
             // Log the error
             console.log(error.message);
+            const err: ErrorMessage = {
+                error: true,
+                errMessage: "Internal Server Error"
+            }
+            setError(err)
         }
     })
 
@@ -102,7 +107,7 @@ export default function Login() {
                             name="email"
                         />
                         {/*If there is an error in the email field, the email error message will appear*/}
-                        {errors.email && <p>Please check email address</p>}
+                        {errors.email && <p className={"error-message-text"}>Please check email address</p>}
                     </div>
 
 
@@ -121,10 +126,10 @@ export default function Login() {
                             placeholder="Enter your password"
                             name="password"
                         />
-                        {errors.password && <p>Please check the Password</p>}
+                        {errors.password && <p className={"error-message-text"}>Please check the Password</p>}
                     </div>
 
-                    {error?.error && <div className={"error-message"}>{error.errMessage}</div>}
+                    {error?.error && <div className={"error-message error-message-text"}>{error.errMessage}</div>}
 
                     <div className="formButtons">
                         <button className={"formFieldButton"} type={"submit"}>Sign In</button>

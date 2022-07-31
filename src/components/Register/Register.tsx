@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link, NavLink, useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {gql, useMutation} from "@apollo/client";
 import {AUTH_TOKEN} from "../../constants";
 import {SubmitHandler, useForm} from "react-hook-form";
@@ -61,6 +61,11 @@ export default function Register() {
         } else {
             // Log the error
             console.log(error.message);
+            const err: ErrorMessage = {
+                error: true,
+                errMessage: "Internal Server Error"
+            }
+            setError(err)
         }
     })
 
@@ -97,7 +102,7 @@ export default function Register() {
                         placeholder="Enter your full name"
                         name="name"
                     />
-                    {errors.name && <p>Please check the name entered</p>}
+                    {errors.name && <p className={"error-message-text"}>Please check the name entered</p>}
                 </div>
 
                 <div className="padding-vertical padding-small">
@@ -116,7 +121,7 @@ export default function Register() {
                         name="email"
                     />
                     {/*If there is an error in the email field, the email error message will appear*/}
-                    {errors.email && <p>Please check email address</p>}
+                    {errors.email && <p className={"error-message-text"}>Please check email address</p>}
                 </div>
 
                 <div className="padding-vertical padding-small">
@@ -134,10 +139,10 @@ export default function Register() {
                         placeholder="Enter your password"
                         name="password"
                     />
-                    {errors.password && <p>Please check the Password</p>}
+                    {errors.password && <p className={"error-message-text"} >Please check the Password</p>}
                 </div>
 
-                {error?.errMessage && <div className={"error-message"}>{error.errMessage}</div>}
+                {error?.errMessage && <div className={"error-message error-message-text"}>{error.errMessage}</div>}
 
 
                 <div className="formButtons">
