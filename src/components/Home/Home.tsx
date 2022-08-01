@@ -1,5 +1,4 @@
 import "./Home.css"
-import {Box, Button, Card, CardActions, CardContent, Checkbox, FormControlLabel, Typography} from "@mui/material";
 
 const Home = () => {
     //Constants
@@ -15,8 +14,13 @@ const Home = () => {
                             <a href={"#"} className={"brand"}></a>
                             <nav className={"navbar-nav-container"}>
                                 <a href={"#"} className={"home-nav"}>
-                                    {/*TODO - Add Icon here*/}
-                                    <img/>
+                                    <img src="https://img.icons8.com/material-outlined/24/000000/home--v2.png"/><img/>
+                                </a>
+                                <a href={"#"} className={"fav-nav"}>
+                                    <img src="https://img.icons8.com/material-outlined/24/000000/hearts.png"/>
+                                </a>
+                                <a href={"#"} className={"more-nav"}>
+                                    <img src="https://img.icons8.com/material-outlined/24/000000/more.png"/>
                                 </a>
                             </nav>
                         </div>
@@ -32,9 +36,9 @@ const Home = () => {
                                         <div className={"tag-item-heading"}>
                                             <div className={"tag-heading-colum w-row"}>
                                                 <div className={"tag-column-item-1 w-col w-col-2"}>
-                                                    {/* TODO - Add Icon here   */}
                                                     <img
-                                                        src="https://img.icons8.com/material-outlined/24/000000/circled.png"/>
+                                                        src="https://img.icons8.com/material-outlined/24/000000/circled.png"
+                                                        height={"24"} width={"24"} className={"image"}/>
                                                 </div>
                                                 {/*TODO - Change from hardcoded value to what will be read from the DB*/}
                                                 <div className={"tag-column-item-2 w-col w-col-10"}>
@@ -78,15 +82,15 @@ const Home = () => {
                                     <div className={"margin-top margin-top-small"}>
                                         <div className={"todo-navbar wf-section"}>
                                             <div className={"container"}>
-                                                <ul className={"todo-menu-block"}>
+                                                <ul className={"todo-menu-block w-list-unstyled"}>
                                                     <li>
-                                                        <a className={"nav-link"}>Todos</a>
+                                                        <a className={"nav-link"} href={"#"}>Todos</a>
                                                     </li>
                                                     <li>
-                                                        <a className={"nav-link"}>Notes</a>
+                                                        <a className={"nav-link"}  href={"#"} >Notes</a>
                                                     </li>
                                                     <li>
-                                                        <a className={"nav-link"}>Links</a>
+                                                        <a className={"nav-link"}  href={"#"} >Links</a>
                                                     </li>
 
 
