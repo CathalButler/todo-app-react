@@ -3,13 +3,233 @@
 }
 
 .page-wrapper {
-
+    max-height: 100%;
 
 }
 
 .main-wrapper {
+    display: flex;
+    height: 100vh;
+    flex-flow: row wrap;
+    place-content: stretch flex-start;
+    align-items: stretch;
+}
+
+.navbar-body {
+    display: block;
+    width: 5%;
+    max-width: 10%;
+    flex-direction: row;
+    grid-auto-columns: 1fr;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    background-color: rgb(118, 255, 181);
+}
+
+.navbar {
+    height: 100%;
+    background-color: transparent;
+}
+
+.brand {
+    margin-bottom: 20px;
+}
+
+.main-navbar-container {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-nav-container {
+    display: flex;
+    height: auto;
+    margin-top: 40px;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4vw;
+}
+
+.tag-menu-layout {
+    width: 20%;
+    max-width: 20%;
+    min-width: 20%;
+    border-right: 1px solid rgb(143, 129, 129);
+    border-radius: 1px;
+}
+
+.margin-vertical {
 
 }
+
+.margin-large {
+    margin: 3% 2%;
+}
+
+.tag-item {
+    display: block;
+    height: auto;
+    max-height: 15vh;
+    min-height: 15vh;
+}
+
+.tag-item-heading {
+}
+
+.tag-heading-colum {
+}
+
+.tag-column-item-1 {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag-column-item-2 {
+}
+
+.tag-item-todo-list {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.tag-menu-items-wrapper {
+}
+
+.tag-menu-items {
+    height: auto;
+}
+
+.todo-heading-section {
+    position: relative;
+    height: auto;
+    max-height: 15vh;
+    min-height: 15vh;
+    border-top: 1px none black;
+    border-bottom: 1px solid black;
+    border-radius: 1px;
+}
+
+.margin-medium {
+    display: block;
+    margin: 1.2% 2%;
+    grid-auto-columns: 1fr;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.todo-heading-wrapper {
+    display: block;
+}
+
+.margin-top {
+
+}
+
+.margin-top-small {
+    margin-top: 1.2%;
+}
+
+.todo-navbar {
+
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.todo-menu-block {
+    display: flex;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-link {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    color: rgb(26, 27, 31);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+}
+
+.todo-body-section {
+    height: auto;
+    max-height: 75vh;
+    min-height: 75vh;
+}
+
+.todo-footer-section {
+    height: auto;
+    max-height: 10vh;
+    min-height: 10vh;
+    border-top: 1px solid black;
+    border-radius: 1px;
+}
+
+
+.todo-details-layout {
+    width: 75%;
+}
+
+.home-nav {
+    position: static;
+    display: flex;
+    width: 100%;
+    float: none;
+    clear: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.fav-nav {
+    position: static;
+    display: flex;
+    width: 100%;
+    float: none;
+    clear: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.more-nav {
+    position: static;
+    display: flex;
+    width: 100%;
+    float: none;
+    clear: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
 
 .nav-bar {
     position: relative;
@@ -35,16 +255,20 @@
 .section-todo-hero {
 
 }
+
 .section-todo-body {
 
 }
+
 .section-todo-footer {
 
 }
 
 .page-padding {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    display: block;
+    height: auto;
+    padding-right: 0rem;
+    padding-left: 0rem;
 }
 
 .container-large {
