@@ -53,11 +53,16 @@ const Home = () => {
                                             <div className={"tag-column-item-1 wf-empty w-col w-col-2"}></div>
                                             <div className={"tag-column-item-2 w-col w-col-10"}>
                                                 {/*Todo - Updated data with db data*/}
-                                                <ul className={"list w-list-unstyled"}>
-                                                    <li className={"tag-item-todo-list"}>Todo React App</li>
-                                                    <li className={"tag-item-todo-list"}>Web Scraper</li>
-                                                    <li className={"tag-item-todo-list"}>Network Packet Sniffer</li>
-
+                                                <ul className={"tag-menu-nav w-list-unstyled"}>
+                                                    <li className={"tag-menu-nav-list-item"}>
+                                                        <a href={"#"} className={"tag-nav-link"}>Todo React App</a>
+                                                    </li>
+                                                    <li className={"tag-menu-nav-list-item"}>
+                                                        <a href={"#"} className={"tag-nav-link"}>Web Scraper</a>
+                                                    </li>
+                                                    <li className={"tag-menu-nav-list-item"}>
+                                                        <a href={"#"} className={"tag-nav-link"}>Network Packet Sniffer</a>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>

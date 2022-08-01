@@ -105,6 +105,34 @@
     height: auto;
 }
 
+.tag-nav-link {
+    display: inline;
+    overflow: visible;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 5px 0px;
+    color: rgb(26, 27, 31);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+}
+
+.tag-menu-nav-list-item {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.tag-menu-nav {
+    display: flex;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    list-style-type: none;
+}
+
 .todo-heading-section {
     position: relative;
     height: auto;
