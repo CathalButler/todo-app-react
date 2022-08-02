@@ -61,7 +61,8 @@ const Home = () => {
                                                         <a href={"#"} className={"tag-nav-link"}>Web Scraper</a>
                                                     </li>
                                                     <li className={"tag-menu-nav-list-item"}>
-                                                        <a href={"#"} className={"tag-nav-link"}>Network Packet Sniffer</a>
+                                                        <a href={"#"} className={"tag-nav-link"}>Network Packet
+                                                            Sniffer</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -80,7 +81,7 @@ const Home = () => {
                 <div className={"todo-details-layout"}>
                     <div className={"page-padding"}>
                         <div className={"todo-heading-section"}>
-                            <div className={"margin-vertical margin-medium"}>
+                            <div className={"margin-vertical margin-large"}>
                                 <div className={"todo-heading-wrapper"}>
                                     <h5>Todo React App</h5>
                                     <h1>Todo UI Design</h1>
@@ -92,10 +93,10 @@ const Home = () => {
                                                         <a className={"nav-link"} href={"#"}>Todos</a>
                                                     </li>
                                                     <li>
-                                                        <a className={"nav-link"}  href={"#"} >Notes</a>
+                                                        <a className={"nav-link"} href={"#"}>Notes</a>
                                                     </li>
                                                     <li>
-                                                        <a className={"nav-link"}  href={"#"} >Links</a>
+                                                        <a className={"nav-link"} href={"#"}>Links</a>
                                                     </li>
 
 
@@ -105,6 +106,42 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className={"todo-body-section"}>
+                            <div className={"margin-vertical margin-large"}>
+                                <div className={"todo-list-container"}>
+                                    <div className={"todo-list-form-block w-form"}>
+                                        <form className={"todo-list-form"}>
+                                            <label className={"w-checkbox todo-checkbox-field"}>
+                                                <div className={"w-checkbox todo-checkbox"}></div>
+                                                <input name={"checkbox"} type={"checkbox"}></input>
+                                                <span className={"todo-checkbox-label w-form-label"}> Create Login UI</span>
+                                            </label>
+
+                                            <label className={"w-checkbox todo-checkbox-field"}>
+                                                <div className={"w-checkbox todo-checkbox"}></div>
+                                                <input name={"checkbox"} type={"checkbox"}></input>
+                                                <span className={"todo-checkbox-label w-form-label"}> Create SignUp UI</span>
+                                            </label>
+
+                                            <label className={"w-checkbox todo-checkbox-field"}>
+                                                <div className={"w-checkbox todo-checkbox"}></div>
+                                                <input name={"checkbox"} type={"checkbox"}></input>
+                                                <span className={"todo-checkbox-label w-form-label"}> Create Home UI</span>
+                                            </label>
+
+
+
+                                        </form>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
 

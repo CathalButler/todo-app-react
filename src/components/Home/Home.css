@@ -133,6 +133,65 @@
     list-style-type: none;
 }
 
+.todo-body-section {
+    height: auto;
+    max-height: 75vh;
+    min-height: 75vh;
+}
+
+.todo-list-container {
+}
+
+.todo-list-form-block {
+}
+
+.w-form {
+    margin: 0 0 15px;
+}
+
+.todo-list-form {
+}
+
+.todo-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+}
+.todo-checkbox-label {
+    margin-top: 5px;
+    padding-left: 15px;
+}
+
+.w-form-label {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+.w-checkbox {
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+
+
+.w-checkbox::before {
+    content: " ";
+    display: table;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.w-checkbox::after {
+    content: " ";
+    display: table;
+    grid-area: 1 / 1 / 2 / 2;
+    clear: both;
+}
+
+.todo-checkbox-field {
+}
+
 .todo-heading-section {
     position: relative;
     height: auto;
