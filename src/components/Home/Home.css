@@ -36,6 +36,10 @@
     margin-bottom: 20px;
 }
 
+.heading-padding {
+    padding-right: 8px;
+}
+
 
 
 .main-navbar-container {
@@ -80,13 +84,14 @@
 }
 
 .tag-item-heading {
+    padding: 3px
 }
 
 .tag-heading-colum {
 }
 
 .tag-column-item-1 {
-    display: block;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
