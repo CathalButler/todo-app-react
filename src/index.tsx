@@ -8,6 +8,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
+import {ThemeProvider} from "@mui/material";
+import theme from "./theme";
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
@@ -21,17 +23,19 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-    <BrowserRouter>
-        <ApolloProvider client={client}>
-            <Routes>
-                <Route path={"/"} element={ <App/>}/>
-                <Route path="/register" element={<Register/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/home" element={<Home/>}/>
-            </Routes>
+    <ThemeProvider theme={theme}>
+        <BrowserRouter>
+            <ApolloProvider client={client}>
+                <Routes>
+                    <Route path={"/"} element={ <App/>}/>
+                    <Route path="/register" element={<Register/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/home" element={<Home/>}/>
+                </Routes>
 
-        </ApolloProvider>
-    </BrowserRouter>
+            </ApolloProvider>
+        </BrowserRouter>
+    </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
