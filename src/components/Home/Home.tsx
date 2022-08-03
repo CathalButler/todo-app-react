@@ -1,4 +1,6 @@
 import "./Home.css"
+import {Button, ButtonGroup, Link} from '@mui/material';
+import {start} from "repl";
 
 const Home = () => {
     //Constants
@@ -57,18 +59,20 @@ const Home = () => {
                                             <div className={"tag-column-item-1 wf-empty w-col w-col-2"}></div>
                                             <div className={"tag-column-item-2 w-col w-col-10"}>
                                                 {/*Todo - Updated data with db data*/}
-                                                <ul className={"tag-menu-nav w-list-unstyled"}>
-                                                    <li className={"tag-menu-nav-list-item"}>
-                                                        <a href={"#"} className={"tag-nav-link"}>Todo React App</a>
-                                                    </li>
-                                                    <li className={"tag-menu-nav-list-item"}>
-                                                        <a href={"#"} className={"tag-nav-link"}>Web Scraper</a>
-                                                    </li>
-                                                    <li className={"tag-menu-nav-list-item"}>
-                                                        <a href={"#"} className={"tag-nav-link"}>Network Packet
-                                                            Sniffer</a>
-                                                    </li>
-                                                </ul>
+
+                                                <ButtonGroup className={"tag-menu-nav"} variant="text"
+                                                             orientation={"vertical"} aria-label="large button group "
+                                                             fullWidth={true}>
+                                                    <Button sx={{
+                                                        justifyContent: 'start'
+                                                    }} color={"primary"}>Todo React App</Button>
+                                                    <Button sx={{
+                                                        justifyContent: 'start'
+                                                    }}>Web Scraper</Button>
+                                                    <Button sx={{
+                                                        justifyContent: 'start'
+                                                    }}>Network Packet</Button>
+                                                </ButtonGroup>
                                             </div>
                                         </div>
 
@@ -93,14 +97,17 @@ const Home = () => {
                                         <div className={"todo-navbar wf-section"}>
                                             <div className={"container"}>
                                                 <ul className={"todo-menu-block w-list-unstyled"}>
-                                                    <li>
-                                                        <a className={"nav-link"} href={"#"}>Todos</a>
+                                                    <li className={"padding-right"}>
+                                                        <Link className={"nav-link"} underline={"hover"}
+                                                              href={"#"}>Todos</Link>
                                                     </li>
-                                                    <li>
-                                                        <a className={"nav-link"} href={"#"}>Notes</a>
+                                                    <li className={"padding-right"}>
+                                                        <Link className={"nav-link"} underline={"hover"}
+                                                              href={"#"}>Notes</Link>
                                                     </li>
-                                                    <li>
-                                                        <a className={"nav-link"} href={"#"}>Links</a>
+                                                    <li className={"padding-right"}>
+                                                        <Link className={"nav-link"} underline={"hover"}
+                                                              href={"#"}>Links</Link>
                                                     </li>
 
 
