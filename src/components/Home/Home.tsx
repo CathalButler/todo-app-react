@@ -1,6 +1,8 @@
 import "./Home.css"
-import {Button, ButtonGroup, Link} from '@mui/material';
-import {start} from "repl";
+import {Button, ButtonGroup, IconButton, Link} from '@mui/material';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
+import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 
 const Home = () => {
     //Constants
@@ -13,20 +15,24 @@ const Home = () => {
                 <div className={"navbar-body"}>
                     <div className={"Navbar"}>
                         <div className={"main-navbar-container"}>
-                            <a href={"#"} className={"brand"}></a>
+                            <Link href={"#"} className={"brand"}></Link>
                             <nav className={"navbar-nav-container"}>
-                                <a href={"#"} className={"home-nav"}>
-                                    <img src="https://img.icons8.com/material-outlined/24/000000/home--v2.png"
-                                         alt={"Home Icon"}/>
-                                </a>
-                                <a href={"#"} className={"fav-nav"}>
-                                    <img src="https://img.icons8.com/material-outlined/24/000000/hearts.png"
-                                         alt={"Favourites Icon"}/>
-                                </a>
-                                <a href={"#"} className={"more-nav"}>
-                                    <img src="https://img.icons8.com/material-outlined/24/000000/more.png"
-                                         alt={"More Icon"}/>
-                                </a>
+                                <IconButton>
+                                    <HomeOutlinedIcon>
+                                        {/* TODO- App link to open home UI   */}
+                                    </HomeOutlinedIcon>
+                                </IconButton>
+                                <IconButton>
+                                    <StarBorderOutlinedIcon>
+                                        {/* TODO- App link to open Favorite tasks    */}
+                                    </StarBorderOutlinedIcon>
+                                </IconButton>
+                                <IconButton>
+                                    <MoreHorizOutlinedIcon>
+                                        {/* TODO- App link to open more menu   */}
+                                    </MoreHorizOutlinedIcon>
+                                </IconButton>
+
                             </nav>
                         </div>
                     </div>
@@ -109,7 +115,6 @@ const Home = () => {
                                                         <Link className={"nav-link"} underline={"hover"}
                                                               href={"#"}>Links</Link>
                                                     </li>
-
 
                                                 </ul>
                                             </div>
