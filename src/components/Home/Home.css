@@ -7,6 +7,10 @@
 
 }
 
+.primary-color {
+    color: rgb(171, 75, 213)
+}
+
 .main-wrapper {
     display: flex;
     height: 100vh;
@@ -24,7 +28,7 @@
     gap: 16px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    background-color: rgb(118, 255, 181);
+    background-color: rgb(171, 75, 213)
 }
 
 .navbar {

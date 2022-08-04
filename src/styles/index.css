@@ -62,7 +62,7 @@ h1 {
   width: auto;
   margin-top: 0rem;
   margin-bottom: 0rem;
-  color: rgb(118, 255, 181);
+  /*color: rgb(118, 255, 181);*/
   font-size: 70px;
   line-height: 75px;
   font-weight: 700;
@@ -72,10 +72,14 @@ h1 {
 h2 {
   margin-top: 0rem;
   margin-bottom: 0rem;
-  color: rgb(118, 255, 181);
+  /*color: rgb(118, 255, 181);*/
   font-size: 32px;
   line-height: 36px;
   font-weight: 700;
+}
+
+h5 {
+  color:rgb(171, 75, 213)
 }
 
 p {

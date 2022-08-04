@@ -17,17 +17,17 @@ const Home = () => {
                         <div className={"main-navbar-container"}>
                             <Link href={"#"} className={"brand"}></Link>
                             <nav className={"navbar-nav-container"}>
-                                <IconButton>
+                                <IconButton color={"primary"}>
                                     <HomeOutlinedIcon>
                                         {/* TODO- App link to open home UI   */}
                                     </HomeOutlinedIcon>
                                 </IconButton>
-                                <IconButton>
+                                <IconButton color={"primary"}>
                                     <StarBorderOutlinedIcon>
                                         {/* TODO- App link to open Favorite tasks    */}
                                     </StarBorderOutlinedIcon>
                                 </IconButton>
-                                <IconButton>
+                                <IconButton color={"primary"}>
                                     <MoreHorizOutlinedIcon>
                                         {/* TODO- App link to open more menu   */}
                                     </MoreHorizOutlinedIcon>
@@ -66,15 +66,18 @@ const Home = () => {
                                                     <ButtonGroup className={"tag-menu-nav"} variant="text"
                                                                  orientation={"vertical"} aria-label="large button group "
                                                                  fullWidth={true}>
-                                                        <Button sx={{
+                                                        <Button  sx={{
+                                                            fontWeight: 'bold',
                                                             justifyContent: 'start'
-                                                        }} color={"primary"}>Todo React App</Button>
+                                                        }} color={"secondary"}>Todo React App</Button>
                                                         <Button sx={{
+                                                            fontWeight: 'bold',
                                                             justifyContent: 'start'
-                                                        }}>Web Scraper</Button>
+                                                        }} color={"secondary"}>Web Scraper</Button>
                                                         <Button sx={{
+                                                            fontWeight: 'bold',
                                                             justifyContent: 'start'
-                                                        }}>Network Packet</Button>
+                                                        }}color={"secondary"} >Network Packet</Button>
                                                     </ButtonGroup>
                                                 </div>
                                             </div>
@@ -104,14 +107,17 @@ const Home = () => {
                                                                  orientation={"vertical"} aria-label="large button group "
                                                                  fullWidth={true}>
                                                         <Button sx={{
-                                                            justifyContent: 'start'
-                                                        }} color={"primary"}>Reading</Button>
+                                                            justifyContent: 'start',
+                                                            fontWeight: 'bold',
+                                                        }} color={"secondary"}>Reading</Button>
                                                         <Button sx={{
-                                                            justifyContent: 'start'
-                                                        }}>Taxes</Button>
+                                                            justifyContent: 'start',
+                                                            fontWeight: 'bold',
+                                                        }} color={"secondary"}>Taxes</Button>
                                                         <Button sx={{
-                                                            justifyContent: 'start'
-                                                        }}>Dinner with the family</Button>
+                                                            justifyContent: 'start',
+                                                            fontWeight: 'bold',
+                                                        }}color={"secondary"}>Dinner with the family</Button>
                                                     </ButtonGroup>
                                                 </div>
                                             </div>
