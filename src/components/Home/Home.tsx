@@ -48,7 +48,7 @@ const Home = () => {
                                         <div className={"tag-item-heading"}>
                                             <div className={"tag-heading-colum w-row"}>
                                                 <div className={"tag-column-item-1 w-col w-col-2"}>
-                                                    <CircleOutlinedIcon className={"image"}></CircleOutlinedIcon>
+                                                    <CircleOutlinedIcon className={"icon-padding"}></CircleOutlinedIcon>
                                                 </div>
                                                 {/*TODO - Change from hardcoded value to what will be read from the DB*/}
                                                 <div className={"tag-column-item-2 w-col w-col-10"}>
@@ -64,9 +64,10 @@ const Home = () => {
                                                     {/*Todo - Updated data with db data*/}
 
                                                     <ButtonGroup className={"tag-menu-nav"} variant="text"
-                                                                 orientation={"vertical"} aria-label="large button group "
+                                                                 orientation={"vertical"}
+                                                                 aria-label="large button group "
                                                                  fullWidth={true}>
-                                                        <Button  sx={{
+                                                        <Button sx={{
                                                             fontWeight: 'bold',
                                                             justifyContent: 'start'
                                                         }} color={"secondary"}>Todo React App</Button>
@@ -77,7 +78,7 @@ const Home = () => {
                                                         <Button sx={{
                                                             fontWeight: 'bold',
                                                             justifyContent: 'start'
-                                                        }}color={"secondary"} >Network Packet</Button>
+                                                        }} color={"secondary"}>Network Packet</Button>
                                                     </ButtonGroup>
                                                 </div>
                                             </div>
@@ -88,7 +89,7 @@ const Home = () => {
                                         <div className={"tag-item-heading"}>
                                             <div className={"tag-heading-colum w-row"}>
                                                 <div className={"tag-column-item-1 w-col w-col-2"}>
-                                                    <CircleOutlinedIcon className={"image"}></CircleOutlinedIcon>
+                                                    <CircleOutlinedIcon className={"icon-padding"}></CircleOutlinedIcon>
                                                 </div>
                                                 {/*TODO - Change from hardcoded value to what will be read from the DB*/}
                                                 <div className={"tag-column-item-2 w-col w-col-10"}>
@@ -104,7 +105,8 @@ const Home = () => {
                                                     {/*Todo - Updated data with db data*/}
 
                                                     <ButtonGroup className={"tag-menu-nav"} variant="text"
-                                                                 orientation={"vertical"} aria-label="large button group "
+                                                                 orientation={"vertical"}
+                                                                 aria-label="large button group "
                                                                  fullWidth={true}>
                                                         <Button sx={{
                                                             justifyContent: 'start',
@@ -117,7 +119,7 @@ const Home = () => {
                                                         <Button sx={{
                                                             justifyContent: 'start',
                                                             fontWeight: 'bold',
-                                                        }}color={"secondary"}>Dinner with the family</Button>
+                                                        }} color={"secondary"}>Dinner with the family</Button>
                                                     </ButtonGroup>
                                                 </div>
                                             </div>
@@ -143,15 +145,15 @@ const Home = () => {
                                             <div className={"container"}>
                                                 <ul className={"todo-menu-block w-list-unstyled"}>
                                                     <li className={"padding-right"}>
-                                                        <Link className={"nav-link"} underline={"hover"}
+                                                        <Link color={"black"} underline={"hover"}
                                                               href={"#"}>Todos</Link>
                                                     </li>
                                                     <li className={"padding-right"}>
-                                                        <Link className={"nav-link"} underline={"hover"}
+                                                        <Link color={"black"} underline={"hover"}
                                                               href={"#"}>Notes</Link>
                                                     </li>
                                                     <li className={"padding-right"}>
-                                                        <Link className={"nav-link"} underline={"hover"}
+                                                        <Link color={"black"} underline={"hover"}
                                                               href={"#"}>Links</Link>
                                                     </li>
 

@@ -12,9 +12,9 @@ async function createTask(parent, args, context) {
     const newTask = await context.prisma.task.create({
         data: {
             title: args.title,
-            isComplete: args.isComplete,
-            note: args.note,
+            category: args.category,
             // createdBy
+            // todo: args.todo
         }
     });
 
@@ -37,9 +37,9 @@ async function updateTask(parent, args, context) {
         },
         data: {
             title: args.title,
-            isComplete: args.isComplete,
-            note: args.note,
+            category: args.category,
             // createdBy
+            // todo: args.todo
         }
     });
 
@@ -53,13 +53,11 @@ async function updateTask(parent, args, context) {
 // This function handles deleting a task
 async function deleteTask(parent, args, context, info) {
     // Constants
-    const deleteTask = await context.prisma.task.delete({
+    return await context.prisma.task.delete({
         where: {
             id: args.id
         }
     });
-
-    return deleteTask;
 }
 
 

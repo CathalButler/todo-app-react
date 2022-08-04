@@ -83,7 +83,7 @@
 
 .auth-a-side {
     width: 50%;
-    background-color: #76ffb5;
+    background-color: rgb(171, 75, 213);
 }
 
 .authForm {
@@ -91,12 +91,6 @@
     background-color: #292929;
     padding: 25px 40px;
     overflow: auto;
-}
-
-.pageSwitcher {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10%;
 }
 
 .pageSwitcherItem {
@@ -126,23 +120,6 @@
     border-bottom-right-radius: 25px;
 }
 
-.formCenter {
-    margin-bottom: 40px;
-}
-
-.formTitle {
-    color: #707c8b;
-    font-weight: 300;
-    margin-bottom: 50px;
-    padding: 10px;
-    max-width: 85%;
-}
-
-.auth-nav-buttons {
-    margin: 20px;
-}
-
-
 .formTitleLink {
     color: #707c8b;
     text-decoration: none;
@@ -161,17 +138,8 @@
     border-bottom: 1px solid #6b5b95;
 }
 
-.formField {
-    margin-bottom: 40px;
-
-}
-
 .formButtons {
 
-}
-
-.spaceBetweenButtons {
-    padding-right: 50px;
 }
 
 .formFieldLabel {
@@ -208,37 +176,6 @@
     font-size: 0.8em;
     font-weight: 500;
 
-}
-
-.formFieldLink {
-    color: #66707d;
-    text-decoration: none;
-    display: inline-block;
-    border-bottom: 2px solid #3a37ee;;
-    padding-bottom: 5px;
-}
-
-.formFieldCheckboxLabel {
-    color: #646f7d;
-    font-size: 0.9em;
-}
-
-.formFieldCheckbox {
-    position: relative;
-    top: 1.5px;
-}
-
-.formFieldTermsLink {
-    color: white;
-    border-bottom: 1px solid #6b5b95;
-    text-decoration: none;
-    display: inline-block;
-    padding-bottom: 2px;
-    margin-left: 5px;
-}
-
-.socialMediaButtons {
-    padding: 10px 100px 10px 0px;
 }
 
 .error-message {

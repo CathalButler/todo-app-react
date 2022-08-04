@@ -14,6 +14,7 @@ model Task {
   createdById String?
   category    String
   todo        Todo[]
+  title       String
 }
 
 model User {
