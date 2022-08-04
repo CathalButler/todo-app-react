@@ -9,11 +9,22 @@ type Query {
 type Task {
     id:ID!
     title: String!
-    isComplete: Boolean!
-    note: String
+    category: String # User can set a category like "Personal", "Projects", "College"
     createdAt: DateTime!
     createdBy: User!
+    todo: [Todo]
 
+}
+
+# To do type, this is a subtype of Task as a task can have more then one to do item
+type Todo {
+    id: ID!
+    title: String!
+    isComplete: Boolean!
+    note: String
+    link: String
+
+    task: Task! # To do is linked to a Task
 }
 
 # Type user, which will be a user account on the app
@@ -28,9 +39,14 @@ type User {
 # Mutations which allow for Creating, updating and deleting data:
 type Mutation {
     # Task Mutations
-    createTask(title: String!, isComplete: Boolean, note: String): Task!
-    updateTask(title: String!, isComplete: Boolean, note: String): Task!
+    createTask(title: String!, category: String): Task!
+    updateTask(title: String!, category: String): Task!
     deleteTask(id: ID!): Task!
+
+    # To do Mutations
+    addTodo(title: String!, isComplete: Boolean, note: String, link: String): Todo
+    updateTodo(title: String!, isComplete: Boolean, note: String, link: String): Todo
+    deleteTodo(id: ID!): Todo
 
     # Account Mutations
     signup(email: String!, password: String, name: String!): AuthPayload
