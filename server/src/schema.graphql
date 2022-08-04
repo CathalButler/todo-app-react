@@ -12,7 +12,7 @@ type Task {
     category: String # User can set a category like "Personal", "Projects", "College"
     createdAt: DateTime!
     createdBy: User!
-    todo: [Todo]
+    todo: [Todo] # A task can have more then one To do item.
 
 }
 
