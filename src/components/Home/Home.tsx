@@ -1,9 +1,9 @@
 import "./Home.css"
-import {Button, ButtonGroup, Checkbox, FormControlLabel, FormGroup, IconButton, Link} from '@mui/material';
+import {Checkbox, FormControlLabel, FormGroup, IconButton, Link} from '@mui/material';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
+import TaskMenu from "./TaskMenu";
 
 const Home = () => {
     //Constants
@@ -38,99 +38,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className={"tag-menu"}>
-                    <div className={"page-padding"}>
-                        <div className={"tag-menu-items"}>
-                            <div className={"margin-vertical margin-large"}>
-                                <div className={"tag-menu-items-wrapper"}>
-
-                                    <div className={"tag-item"}>
-                                        <div className={"tag-item-heading"}>
-                                            <div className={"tag-heading-colum w-row"}>
-                                                <div className={"tag-column-item-1 w-col w-col-2"}>
-                                                    <CircleOutlinedIcon className={"icon-padding"}></CircleOutlinedIcon>
-                                                </div>
-                                                {/*TODO - Change from hardcoded value to what will be read from the DB*/}
-                                                <div className={"tag-column-item-2 w-col w-col-10"}>
-                                                    <h3>Projects</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={"tag-item-todo-list"}>
-                                            <div className={"w-row"}>
-                                                <div className={"tag-column-item-1 wf-empty w-col w-col-2"}></div>
-                                                <div className={"tag-column-item-2 w-col w-col-10"}>
-                                                    {/*Todo - Updated data with db data*/}
-
-                                                    <ButtonGroup className={"tag-menu-nav"} variant="text"
-                                                                 orientation={"vertical"}
-                                                                 aria-label="large button group "
-                                                                 fullWidth={true}>
-                                                        <Button sx={{
-                                                            fontWeight: 'bold',
-                                                            justifyContent: 'start'
-                                                        }} color={"secondary"}>Todo React App</Button>
-                                                        <Button sx={{
-                                                            fontWeight: 'bold',
-                                                            justifyContent: 'start'
-                                                        }} color={"secondary"}>Web Scraper</Button>
-                                                        <Button sx={{
-                                                            fontWeight: 'bold',
-                                                            justifyContent: 'start'
-                                                        }} color={"secondary"}>Network Packet</Button>
-                                                    </ButtonGroup>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className={"tag-item"}>
-                                        <div className={"tag-item-heading"}>
-                                            <div className={"tag-heading-colum w-row"}>
-                                                <div className={"tag-column-item-1 w-col w-col-2"}>
-                                                    <CircleOutlinedIcon className={"icon-padding"}></CircleOutlinedIcon>
-                                                </div>
-                                                {/*TODO - Change from hardcoded value to what will be read from the DB*/}
-                                                <div className={"tag-column-item-2 w-col w-col-10"}>
-                                                    <h3>Personal</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={"tag-item-todo-list"}>
-                                            <div className={"w-row"}>
-                                                <div className={"tag-column-item-1 wf-empty w-col w-col-2"}></div>
-                                                <div className={"tag-column-item-2 w-col w-col-10"}>
-                                                    {/*Todo - Updated data with db data*/}
-
-                                                    <ButtonGroup className={"tag-menu-nav"} variant="text"
-                                                                 orientation={"vertical"}
-                                                                 aria-label="large button group "
-                                                                 fullWidth={true}>
-                                                        <Button sx={{
-                                                            justifyContent: 'start',
-                                                            fontWeight: 'bold',
-                                                        }} color={"secondary"}>Reading</Button>
-                                                        <Button sx={{
-                                                            justifyContent: 'start',
-                                                            fontWeight: 'bold',
-                                                        }} color={"secondary"}>Taxes</Button>
-                                                        <Button sx={{
-                                                            justifyContent: 'start',
-                                                            fontWeight: 'bold',
-                                                        }} color={"secondary"}>Dinner with the family</Button>
-                                                    </ButtonGroup>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <TaskMenu/>
 
 
                 <div className={"todo-details-layout"}>
