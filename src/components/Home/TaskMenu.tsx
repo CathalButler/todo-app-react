@@ -2,6 +2,8 @@ import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import {Button, ButtonGroup, IconButton} from "@mui/material";
 import {gql, useQuery} from "@apollo/client";
+import AddTaskDialog from "./AddTaskDialog";
+import {Alarm} from "@mui/icons-material";
 
 
 const TASK_QUERY = gql`
@@ -77,7 +79,7 @@ const TaskMenu = () => {
         </div>
 
         <div className={"add-button"}>
-            <Button variant="contained" color={"secondary"}> Add Task</Button>
+            <AddTaskDialog/>
         </div>
     </div>;
 }
