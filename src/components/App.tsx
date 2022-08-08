@@ -2,6 +2,7 @@ import '../styles/App.css';
 import React from "react";
 import {AUTH_TOKEN} from "../constants";
 import Login from "./Login/Login";
+import Home from "./Home/Home";
 
 function App() {
 
@@ -14,10 +15,7 @@ function App() {
     }
 
     return (
-        <div className={"wrapper"}>
-            <h1>Welcome to a React To-do app! </h1>
-            {/*<Header/>*/}
-        </div>
+        <Home/>
     );
 }
 

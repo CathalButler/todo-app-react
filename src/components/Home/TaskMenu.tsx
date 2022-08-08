@@ -77,10 +77,7 @@ const TaskMenu = () => {
         </div>
 
         <div className={"add-button"}>
-            <IconButton size={"large"} color={"secondary"}>
-                <AddCircleOutlineOutlinedIcon>
-                </AddCircleOutlineOutlinedIcon>
-            </IconButton>
+            <Button variant="contained" color={"secondary"}> Add Task</Button>
         </div>
     </div>;
 }
