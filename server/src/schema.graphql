@@ -1,6 +1,6 @@
 # A query that retrieves all tasks form the backend. This query also allows for filter, sorting and pagination arguments
 type Query {
-    getTasks(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): [Task!]!
+    getTasks(filter: String, skip: Int, take: Int, orderBy: TaskOrderByCategory): [Task!]!
     getUsers(filter: String, skip: Int, take: Int): [User!]!
 }
 
@@ -59,10 +59,8 @@ type AuthPayload {
     user: User
 }
 
-input LinkOrderByInput {
-    description: Sort
-    url: Sort
-    createdAt: Sort
+input TaskOrderByCategory {
+    category: String
 }
 
 enum Sort {

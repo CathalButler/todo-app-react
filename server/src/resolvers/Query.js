@@ -2,8 +2,7 @@ async function getTasks(parent, args, context, info) {
     const where = args.filter
         ? {
             OR: [
-                {description: {contains: args.filter}},
-                {url: {contains: args.filter}}
+                {category: {contains: args.filter}},
             ]
         }
         : {};
