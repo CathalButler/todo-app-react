@@ -1,5 +1,6 @@
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import {Button, ButtonGroup} from "@mui/material";
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import {Button, ButtonGroup, IconButton} from "@mui/material";
 import {gql, useQuery} from "@apollo/client";
 
 
@@ -22,8 +23,9 @@ const TaskMenu = () => {
 
     if (loading) return <h3>"Loading...."</h3>;
     //Todo - Updated this to insure its a more user friendly message if there is any backend issues.
-    // Todo - Center error message
-    if (error) return <div className={"tag-menu page-padding"}><pre>{error.message}</pre></div>
+    if (error) return <div className={"tag-menu page-padding align-center"}>
+        <pre>{error.message}</pre>
+    </div>
 
 
     return <div className={"tag-menu"}>
@@ -72,6 +74,13 @@ const TaskMenu = () => {
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div className={"add-button"}>
+            <IconButton size={"large"} color={"secondary"}>
+                <AddCircleOutlineOutlinedIcon>
+                </AddCircleOutlineOutlinedIcon>
+            </IconButton>
         </div>
     </div>;
 }

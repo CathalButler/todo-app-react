@@ -262,6 +262,16 @@
     list-style: none;
 }
 
+.add-button {
+    text-align: center;
+
+}
+
+.align-center {
+    text-align: center;
+}
+
+
 
 .page-padding {
     display: block;
