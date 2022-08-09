@@ -27,7 +27,6 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-// Todo - write code to push form data
 const CREATE_NEW_TASK_MUTATION = gql`
     mutation CreateMutation(
         $title: String!
@@ -53,8 +52,7 @@ export default function AddTaskDialog() {
     const [addTask] = useMutation(CREATE_NEW_TASK_MUTATION,
         {
             onCompleted: ({addTask}) => {
-                console.log(addTask);
-                //TODO - Close Dialog box
+                handleClose();
             },
         }
     );
@@ -82,12 +80,14 @@ export default function AddTaskDialog() {
             </Button>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Dialog open={open} onClose={handleClose} TransitionComponent={Transition} disablePortal>
+                <Dialog open={open} onClose={handleClose}
+                        TransitionComponent={Transition}
+                        disablePortal
+                        fullWidth
+                        maxWidth={"sm"}>
                     <DialogTitle>Add a new task</DialogTitle>
                     <DialogContent>
-                        <DialogContentText>
-                            Name
-                        </DialogContentText>
+                        <DialogContentText>Name</DialogContentText>
                         <TextField
                             {...register("title", {
                                 required: true,
@@ -101,12 +101,11 @@ export default function AddTaskDialog() {
                             fullWidth
                             variant="standard"
                         />
+                        {errors.title && <p className={"error-message-text"}>Please enter a title</p>}
                         <div className={"padding padding-small"}/>
 
 
-                        <DialogContentText>
-                            Category
-                        </DialogContentText>
+                        <DialogContentText>Category</DialogContentText>
                         <TextField
                             {...register("category", {
                                 required: true,
@@ -120,6 +119,7 @@ export default function AddTaskDialog() {
                             fullWidth
                             variant="standard"
                         />
+                        {errors.category && <p className={"error-message-text"}>Please enter a category</p>}
                     </DialogContent>
                     <DialogActions>
                         <Button color={"error"} onClick={handleClose}>Cancel</Button>

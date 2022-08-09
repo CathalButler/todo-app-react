@@ -34,7 +34,7 @@ export default function Login() {
         {
             onCompleted: ({login}) => {
                 localStorage.setItem(AUTH_TOKEN, login.token);
-                navigate('/home');
+                navigate('/');
             },
         }
     );

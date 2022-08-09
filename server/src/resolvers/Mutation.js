@@ -8,19 +8,20 @@ async function createTask(parent, args, context) {
     let createdBy = undefined
     // Constants
     const {userId} = context;
+    // Get user ID
+
+    if (userId) {
+        createdBy = {connect: {id: userId}}
+    }
 
     const newTask = await context.prisma.task.create({
         data: {
             title: args.title,
             category: args.category,
-            // createdBy
+            createdBy
             // todo: args.todo
         }
     });
-
-    if (userId) {
-        createdBy = {connect: {id: userId}}
-    }
 
     return newTask;
 }
