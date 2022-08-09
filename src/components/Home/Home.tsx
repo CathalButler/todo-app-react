@@ -10,38 +10,35 @@ const Home = () => {
     //Constants
 
     return (
-        <div className={"page-wrapper"}>
-            <div className={"main-wrapper"}>
-                <div className={"navbar-body"}>
-                    <div className={"Navbar"}>
-                        <div className={"main-navbar-container"}>
-                            <Link href={"#"} className={"brand"}></Link>
-                            <nav className={"navbar-nav-container"}>
-                                <IconButton color={"primary"}>
-                                    <HomeOutlinedIcon>
-                                        {/* TODO- App link to open home UI   */}
-                                    </HomeOutlinedIcon>
-                                </IconButton>
-                                <IconButton color={"primary"}>
-                                    <StarBorderOutlinedIcon>
-                                        {/* TODO- App link to open Favorite tasks    */}
-                                    </StarBorderOutlinedIcon>
-                                </IconButton>
-                                <IconButton color={"primary"}>
-                                    <MoreHorizOutlinedIcon>
-                                        {/* TODO- App link to open more menu   */}
-                                    </MoreHorizOutlinedIcon>
-                                </IconButton>
-                            </nav>
-                        </div>
-                    </div>
+        <div className={"navbar-body"}>
+            <div className={"Navbar"}>
+                <div className={"main-navbar-container"}>
+                    <Link href={"#"} className={"brand"}></Link>
+                    <nav className={"navbar-nav-container"}>
+                        <IconButton color={"primary"}>
+                            <HomeOutlinedIcon>
+                                {/* TODO- App link to open home UI   */}
+                            </HomeOutlinedIcon>
+                        </IconButton>
+                        <IconButton color={"primary"}>
+                            <StarBorderOutlinedIcon>
+                                {/* TODO- App link to open Favorite tasks    */}
+                            </StarBorderOutlinedIcon>
+                        </IconButton>
+                        <IconButton color={"primary"}>
+                            <MoreHorizOutlinedIcon>
+                                {/* TODO- App link to open more menu   */}
+                            </MoreHorizOutlinedIcon>
+                        </IconButton>
+                    </nav>
                 </div>
-
-                <TaskMenu/>
-
-                <TaskDetails/>
             </div>
         </div>
+        //TODO - Try and have TaskMenu also inside here.
+
+        // {<TaskMenu/>}
+
+        // {/*<TaskDetails/>*/}
     )
 }
 

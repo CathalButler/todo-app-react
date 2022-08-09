@@ -11,6 +11,8 @@ import {ThemeProvider} from "@mui/material";
 import theme from "./theme";
 import {setContext} from "@apollo/client/link/context";
 import {AUTH_TOKEN} from "./constants";
+import {TaskDetails} from "./components/Home/TaskDetails";
+import Home from "./components/Home/Home";
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
@@ -38,13 +40,7 @@ root.render(
     <ThemeProvider theme={theme}>
         <BrowserRouter>
             <ApolloProvider client={client}>
-                <Routes>
-                    <Route path={"/"} element={ <App/>}/>
-                    <Route path="/register" element={<Register/>}/>
-                    <Route path="/login" element={<Login/>}/>
-                    {/*<Route path="/home" element={<Home/>}/>*/}
-                </Routes>
-
+                <App/>
             </ApolloProvider>
         </BrowserRouter>
     </ThemeProvider>

@@ -4,6 +4,7 @@ import {Button, ButtonGroup, IconButton} from "@mui/material";
 import {gql, useQuery} from "@apollo/client";
 import AddTaskDialog from "./AddTaskDialog";
 import {Alarm} from "@mui/icons-material";
+import {useNavigate} from "react-router-dom";
 
 
 const TASK_QUERY = gql`
@@ -22,6 +23,7 @@ const TASK_QUERY = gql`
 const TaskMenu = () => {
 
     const {data, loading, error} = useQuery(TASK_QUERY);
+    const navigate = useNavigate();
 
     if (loading) return <h3>"Loading...."</h3>;
     //Todo - Updated this to insure its a more user friendly message if there is any backend issues.
@@ -63,7 +65,11 @@ const TaskMenu = () => {
                                                             <Button sx={{
                                                                 fontWeight: "bold",
                                                                 justifyContent: "start"
-                                                            }} color={"secondary"}>{task.title}</Button>
+                                                            }}
+                                                                    color={"secondary"}
+                                                                    href={"/task"}>
+                                                                {task.title}
+                                                            </Button>
                                                         </ButtonGroup>
                                                     </div>
                                                 </div>
