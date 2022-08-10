@@ -29,7 +29,7 @@ S3_BUCKET="todo-react-$NODE_ENV"
 echo "Deploying to the $S3_BUCKET bucket"
 
 # Install the AWS CLI so we can publish to S3
-pip install awscli --upgrade --user
+pip3 install awscli --upgrade --user
 
 # Sync our build folder with our S3 bucket
 # --acl public-read says deploy the files with public read access
