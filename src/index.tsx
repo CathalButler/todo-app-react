@@ -4,18 +4,14 @@ import './styles/index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apollo/client';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Register from "./components/Register/Register";
-import Login from "./components/Login/Login";
+import {BrowserRouter} from "react-router-dom";
 import {ThemeProvider} from "@mui/material";
 import theme from "./theme";
 import {setContext} from "@apollo/client/link/context";
 import {AUTH_TOKEN} from "./constants";
-import {TaskDetails} from "./components/Home/TaskDetails";
-import Home from "./components/Home/Home";
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:4000'
+    uri: 'http://todo-api-production.eba-awi5y9cb.eu-west-1.elasticbeanstalk.com/'
 });
 
 // Middleware will be invoked every time ApolloClient sends a request to the server\:
