@@ -17,6 +17,9 @@ addons:
     packages:
       - "awscli"
 
+env:
+  - SCRIPTS=$TRAVIS_BUILD_DIR/scripts
+
 
 # Cache the node_modules to cut down on installing time
 cache:

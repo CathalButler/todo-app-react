@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.Task</OriginalElement>
+  <nodes>
+    <node x="-77.0" y="94.0">48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.Task</node>
+    <node x="-79.5" y="288.0">48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.Todo</node>
+    <node x="-62.0" y="-100.0">48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.User</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.Todo" target="48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.Task" relationship="REFERENCES">
+      <point x="0.0" y="-100.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.Task" target="48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.User" relationship="REFERENCES">
+      <point x="0.0" y="-72.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="-69.5" y="105.0" />
+  <SelectedNodes>
+    <node>48bba1cd-f398-4c91-a40a-e64b86c0afbd.TABLE:main.Task</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
