@@ -13,11 +13,11 @@ CLOUDFRONT_DIST_ID=''
 if [[ $TRAVIS_BRANCH == $STAGING_BRANCH ]]; then
   NODE_ENV="staging"
   CLOUDFRONT_DIST_ID=$CLOUDFRONT_DIST_ID_STAGING
-  npm build
+  npm run build
 elif [[ $TRAVIS_BRANCH == $PRODUCTION_BRANCH ]]; then
   NODE_ENV="production"
   CLOUDFRONT_DIST_ID=$CLOUDFRONT_DIST_ID_PRODUCTION
-  npm build
+  npm run build
 else
   # Don't want to deploy if it's not one of the above branches
   echo "Not deploying"
