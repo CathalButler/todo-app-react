@@ -1,7 +1,38 @@
-sudo: required
+os: linux
+dist: bionic # Ubuntu 18.04 :)
 language: node_js
 node_js:
-  - node
+  - lts/*
+
+# These are the only two branches allowed to build and deploy
+branches:
+  only:
+    - main
+    - dev
+
+# Install the awscli using apt on Travis so it can be used when the 'deploy.sh' script needs to run
+# a aws command.
+addons:
+  apt:
+    packages:
+      - "awscli"
+
+
+# Cache the node_modules to cut down on installing time
+cache:
+  directories:
+    - ./node_modules
+
+# Install npm packages found in the apps package.json script
+install:
+  - npm install
+
+# Note - Travis config file will cause the Travis env to automatically run the package.json 'test' script first
+# so we don't need to set a deploy options here... continue to after success where the 'deploy.sh' will manage the
+# rest for the frontend
+
+# Once Travis has completed installing packages and running tests the deploy.sh script will look after
+# building, deploying to an S3 bucket and refreshing cloudfront
 after_success:
-  - chmod +x deploy.sh
-  - "./scripts/deploy.sh"
+  - chmod +x $SCRIPTS/deploy.sh
+  - $SCRIPTS/deploy.sh
