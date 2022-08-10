@@ -8,6 +8,8 @@ import Register from "./Register/Register";
 import {TaskDetails} from "./Home/TaskDetails";
 import TaskMenu from "./Home/TaskMenu";
 
+/// https://stackoverflow.com/questions/66149145/how-to-render-different-components-using-react-router-dom-v6-0-0-with-react-redu
+
 function App() {
 
     // Grab auth key from local storage:

@@ -3,8 +3,6 @@ import {IconButton, Link} from '@mui/material';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
-import TaskMenu from "./TaskMenu";
-import {TaskDetails} from "./TaskDetails";
 
 const Home = () => {
     //Constants
