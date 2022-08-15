@@ -1,5 +1,4 @@
 import {Checkbox, FormControlLabel, FormGroup, Link} from "@mui/material";
-import {useQuery} from "@apollo/client";
 
 export function TaskDetails() {
 

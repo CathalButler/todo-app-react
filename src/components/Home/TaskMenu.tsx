@@ -1,10 +1,7 @@
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import {Button, ButtonGroup, IconButton} from "@mui/material";
+import {Button, ButtonGroup} from "@mui/material";
 import {gql, useQuery} from "@apollo/client";
 import AddTaskDialog from "./AddTaskDialog";
-import {Alarm} from "@mui/icons-material";
-import {useNavigate} from "react-router-dom";
 
 
 const TASK_QUERY = gql`
@@ -23,7 +20,6 @@ const TASK_QUERY = gql`
 const TaskMenu = () => {
 
     const {data, loading, error} = useQuery(TASK_QUERY);
-    const navigate = useNavigate();
 
     if (loading) return <h3>"Loading...."</h3>;
     //Todo - Updated this to insure its a more user friendly message if there is any backend issues.

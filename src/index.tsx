@@ -11,7 +11,7 @@ import {setContext} from "@apollo/client/link/context";
 import {AUTH_TOKEN} from "./constants";
 
 const httpLink = createHttpLink({
-    uri: 'http://todo-api-production.eba-awi5y9cb.eu-west-1.elasticbeanstalk.com/'
+    uri: 'https://dontdo-backend.herokuapp.com/'
 });
 
 // Middleware will be invoked every time ApolloClient sends a request to the server\:
