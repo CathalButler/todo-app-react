@@ -5,6 +5,7 @@ import AddTaskDialog from "./AddTaskDialog";
 import {Link} from "react-router-dom";
 import {Task} from "../../Task";
 import ReactLoading from 'react-loading';
+import Button from "@mui/material/Button";
 
 
 const TASK_QUERY = gql`
@@ -24,7 +25,10 @@ const TaskMenu = () => {
 
     const {data, loading, error} = useQuery(TASK_QUERY);
 
-    if (loading) return <div className={"tag-menu page-padding align-center"}><ReactLoading type={"spin"} height={50} width={50} color={"#ab4bd5"}></ReactLoading></div>
+    if (loading) return <div className={"tag-menu page-padding align-center"}><ReactLoading type={"spin"} height={50}
+                                                                                            width={50}
+                                                                                            color={"#ab4bd5"}></ReactLoading>
+    </div>
     //Todo - Updated this to insure its a more user friendly message if there is any backend issues.
     if (error) return <div className={"tag-menu page-padding align-center"}>
         <pre>{error.message}</pre>
@@ -59,19 +63,18 @@ const TaskMenu = () => {
                                                     <div className={"tag-column-item-2 w-col w-col-10"}>
                                                         <ButtonGroup className={"tag-menu-nav"} variant="text"
                                                                      orientation={"vertical"}
-                                                                     aria-label="large button group "
+                                                                     aria-label="large button group"
                                                                      fullWidth={true}>
-                                                            <Link to={"/task"} state={{
-                                                                ...task
-                                                            }}>{task.title}</Link>
-                                                            {/*<Button sx={{*/}
-                                                            {/*    fontWeight: "bold",*/}
-                                                            {/*    justifyContent: "start"*/}
-                                                            {/*}}*/}
-                                                            {/*        color={"secondary"}*/}
-                                                            {/*        href={"/task"}>*/}
-                                                            {/*    {task.title}*/}
-                                                            {/*</Button>*/}
+                                                            <Button sx={{
+                                                                fontWeight: "bold",
+                                                                justifyContent: "start"
+                                                            }}
+                                                                    color={"secondary"}
+                                                                    href={"/task"}>
+                                                                <Link to={"/task"} state={{
+                                                                    ...task
+                                                                }}>{task.title}</Link>
+                                                            </Button>
                                                         </ButtonGroup>
                                                     </div>
                                                 </div>

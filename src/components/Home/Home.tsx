@@ -15,7 +15,6 @@ const Home = () => {
                     <nav className={"navbar-nav-container"}>
                         <IconButton color={"primary"}>
                             <HomeOutlinedIcon>
-                                {/* TODO- App link to open home UI   */}
                             </HomeOutlinedIcon>
                         </IconButton>
                         <IconButton color={"primary"}>

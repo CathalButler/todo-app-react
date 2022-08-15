@@ -1,6 +1,9 @@
-import {Checkbox, FormControlLabel, FormGroup, Link} from "@mui/material";
+import {ButtonGroup, Checkbox, FormControlLabel, FormGroup, Link} from "@mui/material";
 import {useLocation} from "react-router-dom";
 import {Task} from "../../Task";
+import Button from "@mui/material/Button";
+import {useState} from "react";
+import {TaskDetailsState} from "../../TaskDetailsState";
 
 export function TaskDetails() {
 
@@ -9,6 +12,8 @@ export function TaskDetails() {
     //todo - error handing if no data is passed
     const location = useLocation();
     const data = location.state as Task;
+    const [taskDetailsState, setDetailsState] = useState<TaskDetailsState>();
+
 
     console.log(data);
 
@@ -22,21 +27,37 @@ export function TaskDetails() {
                         <div className={"margin-top margin-top-small"}>
                             <div className={"todo-navbar wf-section"}>
                                 <div className={"container"}>
-                                    <ul className={"todo-menu-block w-list-unstyled"}>
-                                        <li className={"padding-right"}>
-                                            <Link color={"black"} underline={"hover"}
-                                                  href={"#"}>Todos</Link>
-                                        </li>
-                                        <li className={"padding-right"}>
-                                            <Link color={"black"} underline={"hover"}
-                                                  href={"#"}>Notes</Link>
-                                        </li>
-                                        <li className={"padding-right"}>
-                                            <Link color={"black"} underline={"hover"}
-                                                  href={"#"}>Links</Link>
-                                        </li>
+                                    <ButtonGroup variant="text"
+                                                 orientation={"horizontal"}
+                                                 aria-label="large button group"
+                                                 fullWidth={false}
+                                                 className={"todo-menu-block"}>
+                                        <Button sx={{
+                                            fontWeight: "bold",
+                                        }} color={"secondary"} onClick={() => setDetailsState({
+                                            todoView: true,
+                                            notesView: false, linksView: false
+                                        })}>
+                                            Todos
+                                        </Button>
+                                        <Button sx={{
+                                            fontWeight: "bold",
+                                        }} color={"secondary"} onClick={() => setDetailsState({
+                                            todoView: false,
+                                            notesView: true, linksView: false
+                                        })}>
+                                            Notes
+                                        </Button>
+                                        <Button sx={{
+                                            fontWeight: "bold",
+                                        }} color={"secondary"} onClick={() => setDetailsState({
+                                            todoView: false,
+                                            notesView: false, linksView: true
+                                        })}>
+                                            Links
+                                        </Button>
 
-                                    </ul>
+                                    </ButtonGroup>
                                 </div>
                             </div>
                         </div>
@@ -48,18 +69,25 @@ export function TaskDetails() {
             <div className={"todo-body-section"}>
                 <div className={"margin-vertical margin-large"}>
                     <div className={"todo-list-container"}>
-                        <div className={"todo-list-form-block w-form"}>
-                            {/*TODO - Change this to dynamically create Checkbox's from task data from the
+                        {taskDetailsState?.todoView ?
+                            <div className={"todo-list-form-block w-form"}>
+                                {/*TODO - Change this to dynamically create Checkbox's from task data from the
                                         server*/}
-                            <FormGroup className={"todo-list-form"}>
-                                <FormControlLabel control={<Checkbox defaultChecked color={"secondary"}/>}
-                                                  label="Create Login UI"/>
-                                <FormControlLabel control={<Checkbox color={"secondary"}/>}
-                                                  label="Create SignUp UI"/>
-                                <FormControlLabel control={<Checkbox color={"secondary"}/>}
-                                                  label="Create Home UI"/>
-                            </FormGroup>
-                        </div>
+                                <FormGroup className={"todo-list-form"}>
+                                    <FormControlLabel control={<Checkbox defaultChecked color={"secondary"}/>}
+                                                      label="Create Login UI"/>
+                                    <FormControlLabel control={<Checkbox color={"secondary"}/>}
+                                                      label="Create SignUp UI"/>
+                                    <FormControlLabel control={<Checkbox color={"secondary"}/>}
+                                                      label="Create Home UI"/>
+                                </FormGroup>
+                            </div>
+                            : taskDetailsState?.notesView ? <div><text>Hello World from the notes view</text></div>
+                                : taskDetailsState?.linksView ? <div><text>Hello World from the links view</text></div>
+                                    : <div><text>Default will be todo</text></div>
+
+                        }
+
                     </div>
 
                 </div>
