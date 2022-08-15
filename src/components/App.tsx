@@ -26,7 +26,6 @@ function App() {
             <Routes>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/login" element={<Login/>}/>
-                {/*<Route path="/home" element={<Home/>}/>*/}
             </Routes>
 
             <div className={"page-wrapper"}>

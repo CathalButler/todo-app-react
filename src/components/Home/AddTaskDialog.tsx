@@ -46,8 +46,6 @@ export default function AddTaskDialog() {
     //Constants:
     const [open, setOpen] = React.useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm<TaskDetails>();
-    // TODO - Add error handling
-    const [error, setError] = useState<ErrorMessage>()
 
     const [addTask] = useMutation(CREATE_NEW_TASK_MUTATION,
         {

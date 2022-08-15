@@ -1,16 +1,24 @@
 import {Checkbox, FormControlLabel, FormGroup, Link} from "@mui/material";
+import {useLocation} from "react-router-dom";
+import {Task} from "../../Task";
 
 export function TaskDetails() {
 
     // const {data, loading, error} = useQuery(TASK_QUERY);
+
+    //todo - error handing if no data is passed
+    const location = useLocation();
+    const data = location.state as Task;
+
+    console.log(data);
 
     return <div className={"todo-details-layout"}>
         <div className={"page-padding"}>
             <div className={"todo-heading-section"}>
                 <div className={"margin-vertical margin-large"}>
                     <div className={"todo-heading-wrapper"}>
-                        <h5>Todo React App</h5>
-                        <h1>Todo UI Design</h1>
+                        <h5>{data.createdAt}</h5>
+                        <h1>{data.title}</h1>
                         <div className={"margin-top margin-top-small"}>
                             <div className={"todo-navbar wf-section"}>
                                 <div className={"container"}>
