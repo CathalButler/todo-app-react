@@ -79,7 +79,7 @@ export function TaskDetails() {
                                     <FormControlLabel control={<Checkbox color={"secondary"}/>}
                                                       label="Create SignUp UI"/>
                                     <FormControlLabel control={<Checkbox color={"secondary"}/>}
-                                                      label="Create Home UI"/>
+                                                      label="Create MainNavbar UI"/>
                                 </FormGroup>
                             </div>
                             : taskDetailsState?.notesView ? <div><text>Hello World from the notes view</text></div>
