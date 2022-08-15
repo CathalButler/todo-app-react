@@ -1,6 +1,6 @@
 [![Build Status](https://app.travis-ci.com/CathalButler/todo-app-react.svg?branch=main)](https://app.travis-ci.com/CathalButler/todo-app-react)
 
-#  This app is still in development 🚧
+##  This app is still in development 🚧
 
 # [Todo App](https://dontdo.tech/)
 
@@ -27,12 +27,9 @@ In the project directory, you can run:
 
 ### `npm start`
 
-### For the backend server see
+### For the backend server see:
 
-```
-server/
-└─ README.md
-```
+### [todo-backend](https://github.com/CathalButler/todo-backend)
 
 ### References:
 

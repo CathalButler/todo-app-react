@@ -31,11 +31,6 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        //TODO - Try and have TaskMenu also inside here.
-
-        // {<TaskMenu/>}
-
-        // {/*<TaskDetails/>*/}
     )
 }
 
