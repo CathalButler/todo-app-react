@@ -69,8 +69,7 @@ const TaskMenu = () => {
                                                                 fontWeight: "bold",
                                                                 justifyContent: "start"
                                                             }}
-                                                                    color={"secondary"}
-                                                                    href={"/task"}>
+                                                                    color={"secondary"}>
                                                                 <Link to={"/task"} state={{
                                                                     ...task
                                                                 }}>{task.title}</Link>

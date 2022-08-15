@@ -11,7 +11,7 @@ const Home = () => {
         <div className={"navbar-body"}>
             <div className={"Navbar"}>
                 <div className={"main-navbar-container"}>
-                    <Link href={"#"} className={"brand"}></Link>
+                    <Link className={"brand"}></Link>
                     <nav className={"navbar-nav-container"}>
                         <IconButton color={"primary"}>
                             <HomeOutlinedIcon>
