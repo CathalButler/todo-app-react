@@ -39,11 +39,6 @@ root.render(
     <ThemeProvider theme={theme}>
         <BrowserRouter>
             <ApolloProvider client={client}>
-                {/*<Routes>*/}
-                {/*    <Route path="/register" element={<Register/>}/>*/}
-                {/*    <Route path="/login" element={<Login/>}/>*/}
-                {/*    /!*<Route path={"*"} element={<Home/>}/>*!/*/}
-                {/*</Routes>*/}
                 <App/>
             </ApolloProvider>
         </BrowserRouter>
