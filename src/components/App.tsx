@@ -5,7 +5,6 @@ import Login from "./Login/Login";
 import {Route, Routes} from "react-router-dom";
 import Register from "./Register/Register";
 import Home from "./Home/Home";
-import {TaskDetails} from "./Home/TaskDetails";
 
 /// https://stackoverflow.com/questions/66149145/how-to-render-different-components-using-react-router-dom-v6-0-0-with-react-redu
 

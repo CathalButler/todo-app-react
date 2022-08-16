@@ -3,7 +3,7 @@ import {NavLink, useNavigate} from 'react-router-dom';
 import {gql, useMutation} from "@apollo/client";
 import {AUTH_TOKEN} from '../../constants';
 import {SubmitHandler, useForm} from "react-hook-form";
-import {ErrorMessage} from "../../errorMessage";
+import {ErrorMessage} from "../../interfaces/errorMessage";
 
 interface LoginDetails {
     email: string,

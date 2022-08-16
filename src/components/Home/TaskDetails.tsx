@@ -1,9 +1,9 @@
 import {ButtonGroup} from "@mui/material";
 import {useLocation} from "react-router-dom";
-import {Task} from "../../Task";
+import {Task} from "../../interfaces/task";
 import Button from "@mui/material/Button";
 import {useState} from "react";
-import {TaskDetailsState} from "../../TaskDetailsState";
+import {TaskDetailsState} from "../../interfaces/taskDetailsState";
 import TodoListView from "./TodoListView";
 
 export function TaskDetails() {

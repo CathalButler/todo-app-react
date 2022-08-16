@@ -3,7 +3,7 @@ import {ButtonGroup} from "@mui/material";
 import {gql, useQuery} from "@apollo/client";
 import AddTaskDialog from "./AddTaskDialog";
 import {Link} from "react-router-dom";
-import {Task} from "../../Task";
+import {Task} from "../../interfaces/task";
 import ReactLoading from 'react-loading';
 import Button from "@mui/material/Button";
 
@@ -30,7 +30,6 @@ const TASK_QUERY = gql`
 const TaskMenu = () => {
 
     const {data, loading, error} = useQuery(TASK_QUERY);
-
 
     if (loading) return <div className={"tag-menu page-padding align-center"}>
         <ReactLoading type={"spin"} height={50}
