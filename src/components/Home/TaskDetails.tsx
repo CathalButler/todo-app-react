@@ -11,6 +11,7 @@ export function TaskDetails() {
     const location = useLocation();
     const data = location.state as Task;
     const [taskDetailsState, setDetailsState] = useState<TaskDetailsState>();
+    console.log(data);
 
     return <div className={"todo-details-layout"}>
         <div className={"page-padding"}>
@@ -66,10 +67,10 @@ export function TaskDetails() {
                 <div className={"margin-vertical margin-large"}>
                     <div className={"todo-list-container"}>
                         {taskDetailsState?.todoView ?
-                            <TodoListView todo={data.todo}/>
+                            <TodoListView todos={data.todos}/>
                             : taskDetailsState?.notesView ? <div><h3>Hello World from the notes view</h3></div>
                                 : taskDetailsState?.linksView ? <div><h3>Hello World from the links view</h3></div>
-                                    : <TodoListView todo={data.todo}/>
+                                    : <TodoListView todos={data.todos}/>
 
                         }
                     </div>

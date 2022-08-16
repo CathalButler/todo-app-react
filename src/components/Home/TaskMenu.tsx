@@ -10,13 +10,12 @@ import Button from "@mui/material/Button";
 
 const TASK_QUERY = gql`
     {
-        getTasks {
+        getAllUserTasksById {
             id
             title
             createdAt
             category
-            todo {
-                id
+            todos {
                 title
                 isComplete
                 note
@@ -32,15 +31,18 @@ const TaskMenu = () => {
 
     const {data, loading, error} = useQuery(TASK_QUERY);
 
-    if (loading) return <div className={"tag-menu page-padding align-center"}><ReactLoading type={"spin"} height={50}
-                                                                                            width={50}
-                                                                                            color={"#ab4bd5"}></ReactLoading>
+
+    if (loading) return <div className={"tag-menu page-padding align-center"}>
+        <ReactLoading type={"spin"} height={50}
+                      width={50}
+                      color={"#ab4bd5"}></ReactLoading>
     </div>
     //Todo - Updated this to insure its a more user friendly message if there is any backend issues.
     if (error) return <div className={"tag-menu page-padding align-center"}>
         <pre>{error.message}</pre>
     </div>
 
+    console.log(data);
 
     return <div className={"tag-menu"}>
         <div className={"page-padding"}>
@@ -50,7 +52,7 @@ const TaskMenu = () => {
                         <div className={"tag-item"}>
                             {data && (
                                 <>
-                                    {data.getTasks.map((task: Task) => (
+                                    {data.getAllUserTasksById.map((task: Task) => (
                                         <>
                                             <div className={"tag-item-heading"}>
                                                 <div className={"tag-heading-colum w-row"}>

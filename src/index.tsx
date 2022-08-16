@@ -4,14 +4,17 @@ import './styles/index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apollo/client';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {ThemeProvider} from "@mui/material";
 import theme from "./theme";
 import {setContext} from "@apollo/client/link/context";
 import {AUTH_TOKEN} from "./constants";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
+import Home from "./components/Home/Home";
 
 const httpLink = createHttpLink({
-    uri: 'https://dontdo-backend.herokuapp.com/'
+    uri: 'http://localhost:4000/'
 });
 
 // Middleware will be invoked every time ApolloClient sends a request to the server\:
@@ -36,6 +39,11 @@ root.render(
     <ThemeProvider theme={theme}>
         <BrowserRouter>
             <ApolloProvider client={client}>
+                {/*<Routes>*/}
+                {/*    <Route path="/register" element={<Register/>}/>*/}
+                {/*    <Route path="/login" element={<Login/>}/>*/}
+                {/*    /!*<Route path={"*"} element={<Home/>}/>*!/*/}
+                {/*</Routes>*/}
                 <App/>
             </ApolloProvider>
         </BrowserRouter>

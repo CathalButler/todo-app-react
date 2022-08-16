@@ -32,6 +32,8 @@ function TodoListView(props: any) {
     const {register, handleSubmit, control} = useForm();
     const [complete, setComplete] = useState(true);
 
+    console.log(props);
+
     const [updateTodo] = useMutation(UPDATE_TODO,
         {
             onCompleted: ({updateTodo}) => {
@@ -61,8 +63,8 @@ function TodoListView(props: any) {
             </div>
         </div>
         <div className={"todo-list-form-block w-form"}>
-            {props.todo.length
-                ? props.todo.map((todo: Todo, index: any) => (
+            {props.todos.length
+                ? props.todos.map((todo: Todo, index: any) => (
                     <FormGroup className={"todo-list-form"} onSubmit={handleSubmit(onSubmit)}>
                         <FormControlLabel control={<Checkbox {...register("complete")} checked={todo.isComplete}
                                                              color={"secondary"}/>}

@@ -3,7 +3,7 @@ export interface Task {
     title: String,
     createdAt: String,
     category: String
-    todo: [Todo]
+    todos: [Todo]
 
 }
 
