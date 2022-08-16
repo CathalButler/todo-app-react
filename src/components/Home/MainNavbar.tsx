@@ -13,19 +13,14 @@ const MainNavbar = () => {
                 <div className={"main-navbar-container"}>
                     <Link className={"brand"}></Link>
                     <nav className={"navbar-nav-container"}>
-                        <IconButton color={"primary"}>
-                            <HomeOutlinedIcon>
-                            </HomeOutlinedIcon>
+                        <IconButton color={"primary"} href={"/"}>
+                            <HomeOutlinedIcon/>
                         </IconButton>
                         <IconButton color={"primary"}>
-                            <StarBorderOutlinedIcon>
-                                {/* TODO- App link to open Favorite tasks    */}
-                            </StarBorderOutlinedIcon>
+                            <StarBorderOutlinedIcon/>
                         </IconButton>
                         <IconButton color={"primary"}>
-                            <MoreHorizOutlinedIcon>
-                                {/* TODO- App link to open more menu   */}
-                            </MoreHorizOutlinedIcon>
+                            <MoreHorizOutlinedIcon/>
                         </IconButton>
                     </nav>
                 </div>

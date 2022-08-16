@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useState} from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -8,10 +7,9 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import {TransitionProps} from '@mui/material/transitions';
-import {TextField} from "@mui/material";
+import {Box, TextField} from "@mui/material";
 import {gql, useMutation} from "@apollo/client";
 import {SubmitHandler, useForm} from "react-hook-form";
-import {ErrorMessage} from "../../errorMessage";
 
 interface TaskDetails {
     title: string,
@@ -47,7 +45,7 @@ export default function AddTaskDialog() {
     const [open, setOpen] = React.useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm<TaskDetails>();
 
-    const [addTask] = useMutation(CREATE_NEW_TASK_MUTATION,
+    const [addTask, {loading}] = useMutation(CREATE_NEW_TASK_MUTATION,
         {
             onCompleted: ({addTask}) => {
                 handleClose();
@@ -77,7 +75,9 @@ export default function AddTaskDialog() {
                 Add Task
             </Button>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <Box component={"form"}
+                 onSubmit={handleSubmit(onSubmit)}
+            >
                 <Dialog open={open} onClose={handleClose}
                         TransitionComponent={Transition}
                         disablePortal
@@ -91,6 +91,7 @@ export default function AddTaskDialog() {
                                 required: true,
                                 min: 4
                             })}
+                            required={true}
                             autoFocus
                             margin="dense"
                             id="title"
@@ -100,6 +101,7 @@ export default function AddTaskDialog() {
                             variant="standard"
                         />
                         {errors.title && <p className={"error-message-text"}>Please enter a title</p>}
+
                         <div className={"padding padding-small"}/>
 
 
@@ -124,7 +126,7 @@ export default function AddTaskDialog() {
                         <Button variant="contained" color={"secondary"} type={"submit"}>Submit</Button>
                     </DialogActions>
                 </Dialog>
-            </form>
+            </Box>
         </div>
     );
 }

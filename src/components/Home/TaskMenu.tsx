@@ -15,6 +15,13 @@ const TASK_QUERY = gql`
             title
             createdAt
             category
+            todo {
+                id
+                title
+                isComplete
+                note
+                link
+            }
         }
 
     }
