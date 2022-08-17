@@ -1,10 +1,19 @@
 import MainNavbar from "./MainNavbar";
 import TaskMenu from "./TaskMenu";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {TaskDetails} from "./TaskDetails";
 import React from "react";
+import {AUTH_TOKEN} from "../../constants";
 
 const Home = () => {
+
+    // Grab auth key from local storage:
+    const authToken = localStorage.getItem(AUTH_TOKEN);
+
+    // If the key does not exist, return authentication
+    if (!authToken) {
+        return <Navigate to={"/login"}/>
+    }
 
     return (
         <div className={"page-wrapper"}>
