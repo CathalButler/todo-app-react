@@ -1,7 +1,7 @@
 import {Checkbox, FormControlLabel, FormGroup, Stack} from "@mui/material";
 import {Todo} from "../../interfaces/task";
 import Button from "@mui/material/Button";
-import {Add, Delete} from "@mui/icons-material";
+import {Delete} from "@mui/icons-material";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {gql, useMutation} from "@apollo/client";
 import {useState} from "react";
@@ -59,7 +59,6 @@ function TodoListView(props: any) {
             <div className={"margin-vertical margin-bottom"}>
                 <Stack direction={"row"} spacing={2}>
                     <AddTodoDialog/>
-                    <Button variant={"contained"} startIcon={<Add/>}></Button>
                     <Button variant={"contained"} color={"error"} startIcon={<Delete/>}>Remove</Button>
                 </Stack>
             </div>
