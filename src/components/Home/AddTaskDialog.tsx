@@ -45,7 +45,7 @@ export default function AddTaskDialog() {
     const [open, setOpen] = React.useState(false);
     const {register, handleSubmit, formState: {errors}} = useForm<TaskDetails>();
 
-    const [addTask, {loading}] = useMutation(CREATE_NEW_TASK_MUTATION,
+    const [addTask] = useMutation(CREATE_NEW_TASK_MUTATION,
         {
             onCompleted: ({addTask}) => {
                 handleClose();

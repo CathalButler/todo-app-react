@@ -1,10 +1,12 @@
-import {ButtonGroup} from "@mui/material";
+import {ButtonGroup, Stack} from "@mui/material";
 import {useLocation} from "react-router-dom";
 import {Task} from "../../interfaces/task";
 import Button from "@mui/material/Button";
 import {useState} from "react";
 import {TaskDetailsState} from "../../interfaces/taskDetailsState";
 import TodoListView from "./TodoListView";
+import AddTodoDialog from "../AddTodoDialog";
+import {Delete} from "@mui/icons-material";
 
 export function TaskDetails() {
     //todo - error handing if no data is passed
@@ -65,6 +67,12 @@ export function TaskDetails() {
 
             <div className={"todo-body-section"}>
                 <div className={"margin-vertical margin-large"}>
+                    <div className={"margin-vertical margin-bottom"}>
+                        <Stack direction={"row"} spacing={2}>
+                            <AddTodoDialog task={data}/>
+                            <Button variant={"contained"} color={"error"} startIcon={<Delete/>}>Remove</Button>
+                        </Stack>
+                    </div>
                     <div className={"todo-list-container"}>
                         {taskDetailsState?.todoView ?
                             <TodoListView todos={data.todos}/>

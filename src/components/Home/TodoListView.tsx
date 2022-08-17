@@ -1,11 +1,8 @@
-import {Checkbox, FormControlLabel, FormGroup, Stack} from "@mui/material";
+import {Checkbox, FormControlLabel, FormGroup} from "@mui/material";
 import {Todo} from "../../interfaces/task";
-import Button from "@mui/material/Button";
-import {Delete} from "@mui/icons-material";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {gql, useMutation} from "@apollo/client";
 import {useState} from "react";
-import AddTodoDialog from "../AddTodoDialog";
 
 
 const UPDATE_TODO = gql`
@@ -33,7 +30,7 @@ function TodoListView(props: any) {
     const {register, handleSubmit, control} = useForm();
     const [complete, setComplete] = useState(true);
 
-    console.log(props);
+    // console.log(props);
 
     const [updateTodo] = useMutation(UPDATE_TODO,
         {
@@ -46,7 +43,7 @@ function TodoListView(props: any) {
     const onSubmit: SubmitHandler<any> = data => updateTodo(
         {
             variables: {
-                id: props.id, taskId: props.taskId, title: props.title, isComplete: data.complete,
+                id: props.id, taskId: props.id, title: props.title, isComplete: data.complete,
                 note: props.note, link: props.link
             }
         },
@@ -55,14 +52,6 @@ function TodoListView(props: any) {
     })
 
     return <div>
-        <div>
-            <div className={"margin-vertical margin-bottom"}>
-                <Stack direction={"row"} spacing={2}>
-                    <AddTodoDialog/>
-                    <Button variant={"contained"} color={"error"} startIcon={<Delete/>}>Remove</Button>
-                </Stack>
-            </div>
-        </div>
         <div className={"todo-list-form-block w-form"}>
             {props.todos.length
                 ? props.todos.map((todo: Todo, index: any) => (

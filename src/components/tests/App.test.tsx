@@ -1,19 +1,19 @@
 import {render, screen} from '@testing-library/react';
 import {MockedProvider} from "@apollo/client/testing";
 
-import MainNavbar from "./Home/MainNavbar";
-import Home from "./Home/Home";
+import MainNavbar from "../Home/MainNavbar";
+import Home from "../Home/Home";
 import {MemoryRouter} from "react-router-dom";
-import App from "./App";
-import Login from "./Login/Login";
-import Register from "./Register/Register";
-import {TaskDetails} from "./Home/TaskDetails";
+import App from "../App";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
+import {TaskDetails} from "../Home/TaskDetails";
 
 
-jest.mock('./Home/Home')
-jest.mock('./Login/Login')
-jest.mock('./Register/Register')
-jest.mock('./Home/TaskDetails')
+jest.mock('../Home/Home')
+jest.mock('../Login/Login')
+jest.mock('../Register/Register')
+jest.mock('../Home/TaskDetails')
 // jest.mock("./App", () => ({authToken: true}))
 
 // Due to using Typescript I need to convince it that this is a jest Mock object

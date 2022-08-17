@@ -2,12 +2,28 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {TransitionProps} from "@mui/material/transitions";
 import Slide from '@mui/material/Slide';
 import {Add} from "@mui/icons-material";
+import {Box, TextField} from "@mui/material";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {gql, useMutation} from "@apollo/client";
+
+const CREATE_NEW_TODO_MUTATION = gql`
+    mutation CreateMutation(
+        $taskId: String!
+        $title: String!
+        $isComplete: Boolean!
+        $note: String
+        $link: String
+    ) {
+        addTodo(taskId: $taskId, title: $title, isComplete: $isComplete, note: $note, link: $link) {
+            id
+        }
+    }
+`;
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -18,8 +34,31 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function AddTodoDialog() {
+export default function AddTodoDialog(props: any) {
     const [open, setOpen] = React.useState(false);
+    const {register, handleSubmit, formState: {errors}} = useForm<any>();
+
+    console.log(props.task);
+
+    const [addToto] = useMutation(CREATE_NEW_TODO_MUTATION,
+        {
+            onCompleted: ({addTodo}) => {
+                //todo - add refresh
+                handleClose();
+            },
+        }
+    );
+
+    const onSubmit: SubmitHandler<any> = data => addToto(
+        {
+            variables: {
+                taskId: props.task.id, title: data.title, isComplete: true, note: data.note,
+                link: data.link
+            }
+        },
+    ).then(({data}) => {
+        console.log(data)
+    })
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -32,25 +71,41 @@ export default function AddTodoDialog() {
 
     return (
         <div>
-            <Button variant={"contained"} color={"success"} startIcon={<Add/>} onClick={handleClickOpen}>Add</Button>
-            <Dialog
-                open={open}
-                TransitionComponent={Transition}
-                keepMounted
-                onClose={handleClose}
-                aria-describedby="alert-dialog-slide-description"
-            >
-                <DialogTitle>Zoom Dialog</DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
+            <Box component={"form"} onSubmit={handleSubmit(onSubmit)}>
+                <Button variant={"contained"} color={"success"} startIcon={<Add/>}
+                        onClick={handleClickOpen}>Add</Button>
+                <Dialog
+                    open={open}
+                    TransitionComponent={Transition}
+                    keepMounted
+                    onClose={handleClose}
+                    aria-describedby="alert-dialog-slide-description"
+                    disablePortal
+                    fullWidth
+                    maxWidth={"sm"}>
+                    <DialogTitle>Add a todo</DialogTitle>
 
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button variant="outlined" onClick={handleClose} color="primary">Close</Button>
+                    <DialogContentText>Todo Name</DialogContentText>
+                    <TextField {...register("title", {
+                        required: true,
+                    })}
+                               required={true}
+                               autoFocus
+                               margin="dense"
+                               id="title"
+                               label="Todo Name"
+                               type="text"
+                               fullWidth
+                    />
 
-                </DialogActions>
-            </Dialog>
+                    {errors.title && <p className={"error-message-text"}>Please enter a title</p>}
+
+                    <DialogActions>
+                        <Button variant="outlined" onClick={handleClose} color="error">Close</Button>
+                        <Button variant="contained" color={"secondary"} type={"submit"}>Submit</Button>
+                    </DialogActions>
+                </Dialog>
+            </Box>
         </div>
     );
 }
