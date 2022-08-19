@@ -1,30 +1,12 @@
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import {ButtonGroup} from "@mui/material";
-import {gql, useQuery} from "@apollo/client";
+import {useQuery} from "@apollo/client";
 import AddTaskDialog from "./AddTaskDialog";
 import {Link} from "react-router-dom";
 import {Task} from "../../interfaces/task";
 import ReactLoading from 'react-loading';
 import Button from "@mui/material/Button";
-
-
-const TASK_QUERY = gql`
-    {
-        getAllUserTasksById {
-            id
-            title
-            createdAt
-            category
-            todos {
-                title
-                isComplete
-                note
-                link
-            }
-        }
-
-    }
-`;
+import {TASK_QUERY} from "../../apollo/queries/taskQuery";
 
 
 const TaskMenu = () => {

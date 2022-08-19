@@ -4,29 +4,9 @@ import {gql, useMutation} from "@apollo/client";
 import {AUTH_TOKEN} from "../../constants";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ErrorMessage} from "../../interfaces/errorMessage";
+import {REGISTER_MUTATION} from "../../apollo/mutations/registerMutation";
+import {RegisterDetails} from "../../interfaces/registerDetails";
 
-
-interface RegisterDetails {
-    name: string
-    email: string,
-    password: string
-}
-
-const REGISTER_MUTATION = gql`
-    mutation Signup(
-        $email: String!
-        $password: String!
-        $name: String!
-    ) {
-        signup(
-            email: $email
-            password: $password
-            name: $name
-        ) {
-            token
-        }
-    }
-`;
 
 export default function Register() {
 

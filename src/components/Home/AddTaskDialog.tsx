@@ -10,6 +10,7 @@ import {TransitionProps} from '@mui/material/transitions';
 import {Box, TextField} from "@mui/material";
 import {gql, useMutation} from "@apollo/client";
 import {SubmitHandler, useForm} from "react-hook-form";
+import {CREATE_NEW_TASK_MUTATION} from "../../apollo/mutations/createNewTaskMutation";
 
 interface TaskDetails {
     title: string,
@@ -25,19 +26,6 @@ const Transition = React.forwardRef(function Transition(
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const CREATE_NEW_TASK_MUTATION = gql`
-    mutation CreateMutation(
-        $title: String!
-        $category: String!
-    ) {
-        createTask(title: $title, category: $category) {
-            id
-            title
-            category
-            createdAt
-        }
-    }
-`;
 
 export default function AddTaskDialog() {
 

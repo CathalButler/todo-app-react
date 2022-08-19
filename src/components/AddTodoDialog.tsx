@@ -10,20 +10,8 @@ import {Add} from "@mui/icons-material";
 import {Box, TextField} from "@mui/material";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {gql, useMutation} from "@apollo/client";
+import {CREATE_NEW_TODO_MUTATION} from "../apollo/mutations/createNewTodoMutation";
 
-const CREATE_NEW_TODO_MUTATION = gql`
-    mutation CreateMutation(
-        $taskId: String!
-        $title: String!
-        $isComplete: Boolean!
-        $note: String
-        $link: String
-    ) {
-        addTodo(taskId: $taskId, title: $title, isComplete: $isComplete, note: $note, link: $link) {
-            id
-        }
-    }
-`;
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {

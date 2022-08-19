@@ -1,26 +1,11 @@
 import React, {useState} from 'react';
 import {NavLink, useNavigate} from 'react-router-dom';
-import {gql, useMutation} from "@apollo/client";
+import {useMutation} from "@apollo/client";
 import {AUTH_TOKEN} from '../../constants';
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ErrorMessage} from "../../interfaces/errorMessage";
-
-interface LoginDetails {
-    email: string,
-    password: string
-}
-
-
-export const LOGIN_MUTATION = gql`
-    mutation LoginMutation(
-        $email: String!
-        $password: String!
-    ) {
-        login(email: $email, password: $password) {
-            token
-        }
-    }
-`;
+import {LOGIN_MUTATION} from "../../apollo/mutations/loginMutation";
+import {LoginDetails} from "../../interfaces/loginDetails";
 
 export default function Login() {
 

@@ -1,7 +1,7 @@
 import {render} from "@testing-library/react";
-import Login, {LOGIN_MUTATION} from "../Login/Login";
 import {MockedProvider} from "@apollo/client/testing";
 import {useMutation} from "@apollo/client";
+import Login from "../Login/Login";
 
 
 jest.mock('../Login/Login')
