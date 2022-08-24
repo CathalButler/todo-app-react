@@ -4,12 +4,8 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import {AUTH_TOKEN} from "../../constants";
-import {useNavigate} from "react-router-dom";
 
 const MainNavbar = () => {
-    //Constants
-    const navigate = useNavigate();
-
     return (
         <div className={"navbar-body"}>
             <div className={"MainNavbar"}>
@@ -24,8 +20,7 @@ const MainNavbar = () => {
                         </IconButton>
                         <IconButton color={"primary"} onClick={() => {
                             localStorage.removeItem(AUTH_TOKEN);
-                            navigate('/login')
-                        }}>
+                        }} href={"/login"}>
                             <LogoutIcon/>
                         </IconButton>
                     </nav>
